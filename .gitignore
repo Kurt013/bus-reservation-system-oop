@@ -1,0 +1,11 @@
+# Ignore OS generated files #
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+doc/
+target/
+.metadata
+.settings/
+.project
+.classpath
