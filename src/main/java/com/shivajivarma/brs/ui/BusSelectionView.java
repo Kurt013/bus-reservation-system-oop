@@ -27,7 +27,7 @@ public class BusSelectionView extends BaseView implements View {
 		
 		private void initializeLabels() {
 			JLabel temp;
-			temp = ViewComponentFactory.createJLabelNormal("B Id          Orgin        Destination    Type           Dept Tm        Arr tm        Availability          Fare", new int[]{85,10,850,20});
+			temp = ViewComponentFactory.createJLabelNormal("<html><body>B Id          Orgin        Destination    Type    <span style='color: green;'> Dept Tm </span>       Arr tm        Availability          Fare</body>", new int[]{85,10,850,20});
 			temp.setForeground(Color.BLUE);
 			this.add(temp);
 		}
@@ -41,23 +41,30 @@ public class BusSelectionView extends BaseView implements View {
 			this.add(backButton);
 		}
 		
-		public void addBus(int bid, String origin, String destination, String type,String arrtime,String depttime, int count,int fare){
-			this.add(ViewComponentFactory.createJLabelNormal(bid+"        "+
-															origin+"       "+
-															destination+"      "+
-															type+"        "+
-															arrtime+"       "+
-															depttime+"        "+
-															count+"             Rs. "+fare, new int[]{85,50+i,850,20}));
+		public void addBus(int bid, String origin, String destination, String type, String arrtime, String depttime, int count, int fare) {
+			JLabel busLabel = ViewComponentFactory.createJLabelNormal(
+					"<html>" + "<strong>" +
+					+ bid + " "
+					+ origin + " "
+					+ destination + " "
+					+ type + " "
+					+ arrtime + " "
+					+ depttime + " "
+					+ count + "P" + fare
+					+ "</strong>"
+					+ "</html>", new int[]{85, 50 + i, 850, 20});
+			
+			this.add(busLabel);
 			
 			JRadioButton busRadioButton = new JRadioButton();
 			busRadioButton.setActionCommand(String.valueOf(bid));
-			busRadioButton.setBounds(30,50+i,20,20);
+			busRadioButton.setBounds(30, 50 + i, 20, 20);
 			
 			buses.add(busRadioButton);
 			this.add(busRadioButton);
-			i=i+30;
-		}
+			
+			i = i + 30;
+	}
 
 		public JButton getSubmitButton() {
 			return submitButton;
