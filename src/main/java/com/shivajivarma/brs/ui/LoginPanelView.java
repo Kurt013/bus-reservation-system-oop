@@ -3,7 +3,10 @@ package com.shivajivarma.brs.ui;
 import java.awt.Image;
 import java.io.IOException;
 
+
 import javax.imageio.ImageIO;
+
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,6 +30,10 @@ public class LoginPanelView extends BaseView implements View {
     private JButton loginButton, registerButton;
     private int x = 250, y = 125;
 	private Image backgroundImage;
+
+
+    
+
 
 
     /**
@@ -58,9 +65,10 @@ public class LoginPanelView extends BaseView implements View {
     }
 
     private void initializeLabels() {
-        this.add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 425, y, 120, 28 }));
-        this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[] { x + 300, y + 80, 150, 20 }));
-        this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[] { x + 300, y + 140, 150, 20 }));
+        Color jacliner = new Color(220, 2, 11);
+        this.add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 375, y-55, 120, 28 }, jacliner));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[] { x + 300, y + 80, 150, 20 }, Color.red));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[] { x + 300, y + 140, 150, 20 },Color.red ));
     }
 
     private void initializeComponents() {

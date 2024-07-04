@@ -1,5 +1,6 @@
 package com.shivajivarma.brs.ui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +63,7 @@ public class SeatSelectionView extends BaseView implements View{
 	
 		this.add(seat);
 		this.add(icon);
-		this.add(ViewComponentFactory.createJLabelNormal(Integer.toString((i*4)+j), new int[]{70+(j*200),20+(i*50),30,20}));
+		this.add(ViewComponentFactory.createJLabelNormal(Integer.toString((i*4)+j), new int[]{70+(j*200),20+(i*50),30,20}, Color.BLACK));
 		
 		if(j==4){
 			j=1;

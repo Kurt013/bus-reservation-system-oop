@@ -1,5 +1,6 @@
 package com.shivajivarma.brs.ui;
 
+import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -30,13 +31,13 @@ public class RegistrationPanelView extends BaseView implements View{
 	}
 	
 	private void initializeLabels(){
-		this.add(ViewComponentFactory.createJLabelHeader(Labels.REGISTER, new int[]{x+115,y+0,300,28}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[]{x+95,y+60,150,20}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.FULL_NAME, new int[]{x+100,y+120,150,20}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[]{x+99,y+180,200,20}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.RE_ENTER_PASSWORD, new int[]{x+10,y+240,200,20}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.MOBILE, new int[]{x+122,y+300,200,20}));
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.EMAIL, new int[]{x+128,y+360,200,20}));
+		this.add(ViewComponentFactory.createJLabelHeader(Labels.REGISTER, new int[]{x+115,y+0,300,28}, Color.black));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[]{x+95,y+60,150,20}, Color.black));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.FULL_NAME, new int[]{x+100,y+120,150,20}, Color.black));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[]{x+99,y+180,200,20}, Color.black));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.RE_ENTER_PASSWORD, new int[]{x+10,y+240,200,20}, Color.black));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.MOBILE, new int[]{x+122,y+300,200,20},Color.black ));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.EMAIL, new int[]{x+128,y+360,200,20}, Color.black));
 	}
 	
 	private void initializeComponents(){

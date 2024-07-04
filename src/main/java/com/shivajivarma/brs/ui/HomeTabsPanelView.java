@@ -1,5 +1,7 @@
 package com.shivajivarma.brs.ui;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,8 +27,8 @@ public class HomeTabsPanelView extends BaseView implements View{
 	}
 	
 	private void initializeLabels() {
-		welcome = ViewComponentFactory.createJLabelNormal("", new int[]{600,10,300,30});
-		date = ViewComponentFactory.createJLabelNormal("", new int[]{10,10,300,30});
+		welcome = ViewComponentFactory.createJLabelNormal("", new int[]{600,10,300,30}, Color.black);
+		date = ViewComponentFactory.createJLabelNormal("", new int[]{10,10,300,30}, Color.black);
 		this.add(welcome);
 		this.add(date);
 	}
