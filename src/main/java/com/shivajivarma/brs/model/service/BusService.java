@@ -9,9 +9,7 @@ import com.shivajivarma.brs.model.dao.BusDAO;
 import com.shivajivarma.brs.model.entity.Bus;
 import com.shivajivarma.brs.model.entity.Route;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class BusService implements Service {
 
 	public static ClassPathXmlApplicationContext dbApplicationContext;

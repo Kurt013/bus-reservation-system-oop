@@ -8,9 +8,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class IOHelpers {
 
 	@SuppressWarnings("deprecation")

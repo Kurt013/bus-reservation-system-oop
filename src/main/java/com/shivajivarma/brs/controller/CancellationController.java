@@ -11,9 +11,6 @@ import com.shivajivarma.brs.ui.CancellationTabView;
 import com.shivajivarma.brs.ui.View;
 import com.shivajivarma.brs.utility.constants.Messages;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
 public class CancellationController implements Controller{
 	
 	private CancellationController _this;

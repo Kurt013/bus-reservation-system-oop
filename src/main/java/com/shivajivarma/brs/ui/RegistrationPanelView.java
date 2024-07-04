@@ -14,9 +14,7 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.Messages;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 @SuppressWarnings("serial")
 public class RegistrationPanelView extends BaseView implements View{
 	

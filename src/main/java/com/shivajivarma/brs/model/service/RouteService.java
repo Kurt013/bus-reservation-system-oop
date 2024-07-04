@@ -8,9 +8,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import com.shivajivarma.brs.model.dao.RouteDAO;
 import com.shivajivarma.brs.model.entity.Route;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class RouteService implements Service {
 
 	/**

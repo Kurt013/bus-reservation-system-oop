@@ -9,9 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
 public class ViewComponentFactory {
 	
 	public static final Font FONT_HEADER=new Font("Copperplate Gothic Bold",Font.BOLD,32);

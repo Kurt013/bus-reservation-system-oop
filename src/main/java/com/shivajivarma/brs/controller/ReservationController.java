@@ -13,9 +13,7 @@ import com.shivajivarma.brs.ui.ReservationTabView;
 import com.shivajivarma.brs.ui.View;
 import com.shivajivarma.brs.utility.DateUtil;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class ReservationController implements Controller {
 	
 	private ReservationController _this;

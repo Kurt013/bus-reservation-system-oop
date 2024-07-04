@@ -4,9 +4,7 @@ import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class ValidationUtil {
 	
 	public static String validateField(JTextField field, String[] options){

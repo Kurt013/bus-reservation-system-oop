@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 @SuppressWarnings("serial")
 public abstract class BaseView extends JPanel{
 	

@@ -1,8 +1,6 @@
 package com.shivajivarma.brs.utility.constants;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class Messages {
 	public static final String ERROR_LOOK_AND_FIELD = "Application Look and Feel settings are not supported in this environment";
 	public static final String ERROR_PASSWORD_MISMATCH = "Password mismatch";

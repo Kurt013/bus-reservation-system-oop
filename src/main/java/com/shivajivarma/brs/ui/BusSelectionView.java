@@ -10,9 +10,7 @@ import javax.swing.JRadioButton;
 import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 @SuppressWarnings("serial")
 public class BusSelectionView extends BaseView implements View {
 		
@@ -48,8 +46,8 @@ public class BusSelectionView extends BaseView implements View {
 					+ origin + " "
 					+ destination + " "
 					+ type + " "
-					+ arrtime + " "
 					+ depttime + " "
+					+ arrtime + " "
 					+ count + "P" + fare
 					+ "</strong>"
 					+ "</html>", new int[]{85, 50 + i, 850, 20});

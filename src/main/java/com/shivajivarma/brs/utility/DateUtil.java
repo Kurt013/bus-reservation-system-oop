@@ -3,9 +3,7 @@ package com.shivajivarma.brs.utility;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class DateUtil {
 	
 	public static final int maxDaysOfAMonth(int year,int month){

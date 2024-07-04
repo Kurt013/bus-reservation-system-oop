@@ -10,9 +10,7 @@ import com.shivajivarma.brs.utility.ValidationUtil;
 import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 @SuppressWarnings("serial")
 public class CancellationTabView extends BaseView implements View{
 	

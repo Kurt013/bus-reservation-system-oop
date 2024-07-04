@@ -8,7 +8,6 @@ import com.shivajivarma.brs.ui.MasterView;
  * The main launcher for java bus reservation system application. Creates the
  * {@code MasterView} object.
  * 
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
  * @version 2.0
  * @see MasterView
  */

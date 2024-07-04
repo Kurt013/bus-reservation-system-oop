@@ -14,9 +14,7 @@ import com.shivajivarma.brs.ui.RegistrationPanelView;
 import com.shivajivarma.brs.ui.SeatSelectionView;
 import com.shivajivarma.brs.ui.View;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class MasterController implements Controller{
 	
 	private MasterView masterView;

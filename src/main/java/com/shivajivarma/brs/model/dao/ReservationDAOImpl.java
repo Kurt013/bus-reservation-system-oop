@@ -9,7 +9,6 @@ import com.shivajivarma.brs.model.bean.ReservationBean;
 
 /**
  * CRUD operations for reservation view.
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
  */
 public class ReservationDAOImpl extends BaseDAO implements ReservationDAO {
 		

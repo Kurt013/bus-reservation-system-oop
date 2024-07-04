@@ -6,9 +6,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import com.shivajivarma.brs.model.dao.PassengerDAO;
 import com.shivajivarma.brs.model.entity.Passenger;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class PassengerService implements Service{
 	
 	/**

@@ -11,9 +11,6 @@ import com.shivajivarma.brs.ui.ReservationHistoryTabView;
 import com.shivajivarma.brs.ui.ReservationTabView;
 import com.shivajivarma.brs.ui.View;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
 public class HomeTabsMediator implements Controller{
 	
 	private HomeTabsMediator _this;

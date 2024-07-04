@@ -12,9 +12,7 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 @SuppressWarnings("serial")
 public class SeatSelectionView extends BaseView implements View{
 

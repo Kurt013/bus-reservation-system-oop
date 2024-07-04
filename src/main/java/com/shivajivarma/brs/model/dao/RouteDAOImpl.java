@@ -9,9 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import com.shivajivarma.brs.model.entity.Route;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class RouteDAOImpl extends BaseDAO implements RouteDAO {
 	
 	public RouteDAOImpl(){

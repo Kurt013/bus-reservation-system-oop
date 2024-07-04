@@ -11,7 +11,6 @@ import com.shivajivarma.brs.model.entity.Route;
 
 /**
  * CRUD operations for bus table.
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
  */
 public class BusDAOImpl extends BaseDAO implements BusDAO{
 

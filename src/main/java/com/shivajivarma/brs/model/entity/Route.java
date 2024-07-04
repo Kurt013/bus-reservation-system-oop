@@ -3,7 +3,6 @@ package com.shivajivarma.brs.model.entity;
 /**
  * The Bean class, which holds route details.
  * 
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
  */
 public class Route implements Entity {
 

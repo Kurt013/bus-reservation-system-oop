@@ -4,8 +4,7 @@ import com.shivajivarma.brs.model.entity.Reserve;
 
 /**
  * The Bean class, which holds full reservation details, it a logical bean with represent database view.
- * 
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
+ *
  */
 public class ReservationBean extends Reserve implements Bean {
 

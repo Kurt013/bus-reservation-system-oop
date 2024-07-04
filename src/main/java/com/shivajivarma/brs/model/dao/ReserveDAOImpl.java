@@ -9,9 +9,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import com.shivajivarma.brs.model.entity.Reserve;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class ReserveDAOImpl extends BaseDAO implements ReserveDAO {
 		
 	

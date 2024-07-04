@@ -21,9 +21,7 @@ import com.shivajivarma.brs.ui.View;
 import com.shivajivarma.brs.utility.DateUtil;
 import com.shivajivarma.brs.utility.constants.Messages;
 
-/**
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
- */
+
 public class SeatSelectionController implements Controller{
 	
 	private SeatSelectionController _this;

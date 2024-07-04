@@ -1,13 +1,13 @@
 package com.shivajivarma.brs.model.dao;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.dao.EmptyResultDataAccessException;
 
 import com.shivajivarma.brs.model.entity.Passenger;
 
+import org.springframework.dao.EmptyResultDataAccessException;
+
 /**
  * The Service class, which contains business logic to update Passenger model.
- * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
  * @see Passenger
  */
 public class PassengerDAOImpl extends BaseDAO implements PassengerDAO {
