@@ -2,6 +2,7 @@ package com.shivajivarma.brs;
 
 import java.awt.EventQueue;
 
+
 import com.shivajivarma.brs.ui.MasterView;
 
 /**

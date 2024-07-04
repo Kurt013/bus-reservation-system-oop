@@ -21,11 +21,12 @@ public class BusSelectionView extends BaseView implements View {
 		public BusSelectionView(){
 			this.initializeLabels();
 			this.initializeComponents();
+			
 		}
 		
 		private void initializeLabels() {
 			JLabel temp;
-			temp = ViewComponentFactory.createJLabelNormal("<html><body>B Id          Orgin        Destination    Type    <span style='color: green;'> Dept Tm </span>       Arr tm        Availability          Fare</body>", new int[]{85,10,850,20});
+			temp = ViewComponentFactory.createJLabelNormal("<html><body><span style='color: green;'>B Id          Orgin        Destination    Type     Dept Tm        Arr tm        Availability          Fare</span></body>", new int[]{85,10,850,20});
 			temp.setForeground(Color.BLUE);
 			this.add(temp);
 		}
