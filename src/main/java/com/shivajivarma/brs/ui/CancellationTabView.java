@@ -29,7 +29,7 @@ public class CancellationTabView extends BaseView implements View{
 	
 	private void initializeComponents() {
 		ticketNumber = ViewComponentFactory.createJTextFieldNormal(new int[]{270, 38, 150, 30});
-		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{330, 100, 200, 40});
+		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{330, 100, 200, 40},Color.black, Color.gray );
 		
 		ticketNumber.setName(Labels.TICKET_NO);
 		

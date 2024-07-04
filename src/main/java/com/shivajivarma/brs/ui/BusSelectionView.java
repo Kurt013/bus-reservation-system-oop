@@ -32,8 +32,8 @@ public class BusSelectionView extends BaseView implements View {
 		}
 		
 		private void initializeComponents() {
-			submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{500,500,100,40});
-			backButton = ViewComponentFactory.createJButtonNormal(Labels.BACK, new int[]{300, 500, 100, 40});
+			submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{500,500,100,40}, Color.black, Color.gray);
+			backButton = ViewComponentFactory.createJButtonNormal(Labels.BACK, new int[]{300, 500, 100, 40}, Color.black, Color.gray);
 			buses = new ButtonGroup();
 			
 			this.add(submitButton);

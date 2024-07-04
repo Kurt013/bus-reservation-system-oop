@@ -38,7 +38,7 @@ public class HomeTabsPanelView extends BaseView implements View{
 		tabs.setBounds(0,40,1024,500);
 		tabs.setFont(ViewComponentFactory.FONT_NORMAL);
 		
-		logoutButton = ViewComponentFactory.createJButtonNormal(Labels.LOGOUT, new int[]{900,10,100,32});
+		logoutButton = ViewComponentFactory.createJButtonNormal(Labels.LOGOUT, new int[]{900,10,100,32},Color.black, Color.gray);
 		
 		this.add(tabs);
 		this.add(logoutButton);

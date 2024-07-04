@@ -20,11 +20,13 @@ public class ViewComponentFactory {
 	public static final Font FONT_SMALL;
 	public static final Font FONT_LARGE;
 	public static final Font FONT_FIELD;
+	public static final Font FONT_BUTTON;
 
 	static {
 		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBoldItalic.ttf", Font.BOLD, 24);
 		FONT_NORMAL = loadFont("/fonts/Montserrat-Bold.ttf", Font.PLAIN, 17);
 		FONT_FIELD = loadFont("/fonts/Inter-SemiBold.ttf", Font.PLAIN, 17);
+		FONT_BUTTON = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf",Font.BOLD, 17);
 		FONT_SMALL = loadFont("/fonts/CustomFont.ttf", Font.PLAIN, 18);
 		FONT_LARGE = loadFont("/fonts/CustomFont.ttf", Font.BOLD, 40);
 	}
@@ -109,14 +111,17 @@ public class ViewComponentFactory {
 	/*
 	 * Buttons
 	 */
-	public static JButton createJButtonNormal(String name) {
+	public static JButton createJButtonNormal(String name, Color textcolor, Color bgcolor) {
 		JButton button = new JButton(name);
-		button.setFont(FONT_NORMAL);
+		button.setFont(FONT_BUTTON);
+		button.setBackground (bgcolor);
+		button.setForeground(textcolor);
+
 		return button;
 	}
 
-	public static JButton createJButtonNormal(String name, int[] coordinates) {
-		JButton button = createJButtonNormal(name);
+	public static JButton createJButtonNormal(String name, int[] coordinates, Color textColor, Color bgColor) {
+		JButton button = createJButtonNormal(name, textColor, bgColor);
 		button.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
 		return button;
 	}
@@ -139,12 +144,14 @@ public class ViewComponentFactory {
 	public static JPasswordField createJPasswordFieldNormal() {
 		JPasswordField passwordField = new JPasswordField();
 		passwordField.setFont(FONT_FIELD);
+		
 		return passwordField;
 	}
 
 	public static JPasswordField createJPasswordFieldNormal(int[] coordinates) {
 		JPasswordField passwordField = createJPasswordFieldNormal();
 		passwordField.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+		
 		return passwordField;
 	}
 

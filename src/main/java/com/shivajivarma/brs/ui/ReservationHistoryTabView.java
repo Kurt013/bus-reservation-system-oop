@@ -30,7 +30,7 @@ public class ReservationHistoryTabView extends BaseView implements View{
 	}
 	
 	private void initializeComponents() {
-		printButton = ViewComponentFactory.createJButtonNormal(Labels.PRINT, new int[]{910,400,80,40});
+		printButton = ViewComponentFactory.createJButtonNormal(Labels.PRINT, new int[]{910,400,80,40}, Color.black, Color.gray);
 		
 		table = new JTable(null,columns()){
 			public boolean isCellEditable(int arg0, int arg1) {

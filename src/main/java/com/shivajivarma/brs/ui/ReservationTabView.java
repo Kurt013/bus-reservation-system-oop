@@ -46,7 +46,7 @@ public class ReservationTabView extends BaseView implements View{
 		year.addItem(DateUtil.currentYear());
 		year.addItem(DateUtil.currentYear()+1);
 
-		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{x+370,y+300,100,40});
+		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{x+370,y+300,100,40}, Color.black, Color.gray);
 		submitButton.setVisible(false);
 		
 		this.add(origin);

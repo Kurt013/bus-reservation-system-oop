@@ -73,15 +73,20 @@ public class LoginPanelView extends BaseView implements View {
     }
 
     private void initializeComponents() {
-        Insets insets = new Insets(5, 10, 5, 10);
+        Color jaclinery = new Color(248, 188, 8);
+        Color jaclinerr = new Color (220, 2, 11);
+        Insets insets = new Insets(5, 10, 3, 10);
            
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 305, y + 55, 365, 30 });
         username.setMargin(insets);
         password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 305, y + 135, 365, 30 });
         password.setMargin(insets);
         password.setEchoChar('•');
-        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 210, 90, 40 });
-        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 490, y + 210, 110, 40 });
+        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 375, y + 210, 90, 40 }, Color.white, jaclinery);
+        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 480, y + 210, 120, 40 }, Color.white, jaclinery);
+ 
+        loginButton.setBorderPainted(false);
+        registerButton.setBorderPainted(false);
 
         username.setName(Labels.USERNAME);
         password.setName(Labels.PASSWORD);

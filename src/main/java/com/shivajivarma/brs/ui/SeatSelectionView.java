@@ -30,8 +30,8 @@ public class SeatSelectionView extends BaseView implements View{
 	}
 	
 	private void initializeComponents(){
-		bookButton = ViewComponentFactory.createJButtonNormal(Labels.BOOK, new int[]{10,0,90,30});
-		backButton = ViewComponentFactory.createJButtonNormal(Labels.BACK, new int[]{10,60,90,30});
+		bookButton = ViewComponentFactory.createJButtonNormal(Labels.BOOK, new int[]{10,0,90,30}, Color.black, Color.gray);
+		backButton = ViewComponentFactory.createJButtonNormal(Labels.BACK, new int[]{10,60,90,30}, Color.black, Color.gray);
 		
 		for (int i =1 ; i <=40; i++) {
 			this.addSeat();
