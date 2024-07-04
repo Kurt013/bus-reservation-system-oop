@@ -19,10 +19,12 @@ public class ViewComponentFactory {
 	public static final Font FONT_NORMAL;
 	public static final Font FONT_SMALL;
 	public static final Font FONT_LARGE;
+	public static final Font FONT_FIELD;
 
 	static {
-		FONT_HEADER = loadFont("/fonts/Montserrat-Extrabold.ttf", Font.BOLD, 24);
-		FONT_NORMAL = loadFont("C:\\xampp\\htdocs\\bus-reservation-system-oop\\src\\main\\resources\\fonts\\Cocogoose-Pro-Ultralight-trial.ttf", Font.PLAIN, 20);
+		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBoldItalic.ttf", Font.BOLD, 24);
+		FONT_NORMAL = loadFont("/fonts/Montserrat-Bold.ttf", Font.PLAIN, 17);
+		FONT_FIELD = loadFont("/fonts/Inter-SemiBold.ttf", Font.PLAIN, 17);
 		FONT_SMALL = loadFont("/fonts/CustomFont.ttf", Font.PLAIN, 18);
 		FONT_LARGE = loadFont("/fonts/CustomFont.ttf", Font.BOLD, 40);
 	}
@@ -78,7 +80,8 @@ public class ViewComponentFactory {
 
 	public static JLabel createJLabelNormal(String name, int[] coordinates, Color color) {
 		JLabel label = createJLabelNormal(name, color);
-		label.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+		Dimension size = label.getPreferredSize();
+		label.setBounds(coordinates[0], coordinates[1], size.width, size.height);
 		return label;
 	}
 
@@ -123,7 +126,7 @@ public class ViewComponentFactory {
 	 */
 	public static JTextField createJTextFieldNormal() {
 		JTextField textField = new JTextField();
-		textField.setFont(FONT_NORMAL);
+		textField.setFont(FONT_FIELD);
 		return textField;
 	}
 
@@ -135,7 +138,7 @@ public class ViewComponentFactory {
 
 	public static JPasswordField createJPasswordFieldNormal() {
 		JPasswordField passwordField = new JPasswordField();
-		passwordField.setFont(FONT_NORMAL);
+		passwordField.setFont(FONT_FIELD);
 		return passwordField;
 	}
 

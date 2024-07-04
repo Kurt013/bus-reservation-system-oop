@@ -1,6 +1,7 @@
 package com.shivajivarma.brs.ui;
 
 import java.awt.Image;
+import java.awt.Insets;
 import java.io.IOException;
 
 
@@ -65,17 +66,22 @@ public class LoginPanelView extends BaseView implements View {
     }
 
     private void initializeLabels() {
-        Color jacliner = new Color(220, 2, 11);
-        this.add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 375, y-55, 120, 28 }, jacliner));
-        this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[] { x + 300, y + 80, 150, 20 }, Color.red));
-        this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[] { x + 300, y + 140, 150, 20 },Color.red ));
+        Color jacliner = new Color(246, 209, 0);
+        this.add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 375, y-40, 120, 28 }, jacliner));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[] { x + 305, y + 25, 150, 20 }, Color.white));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[] { x + 305, y + 105, 150, 20 },Color.white ));
     }
 
     private void initializeComponents() {
-        username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 420, y + 76, 250, 30 });
-        password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 420, y + 136, 250, 30 });
-        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 230, 80, 40 });
-        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 480, y + 230, 110, 40 });
+        Insets insets = new Insets(5, 10, 5, 10);
+           
+        username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 305, y + 55, 365, 30 });
+        username.setMargin(insets);
+        password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 305, y + 135, 365, 30 });
+        password.setMargin(insets);
+        password.setEchoChar('•');
+        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 210, 90, 40 });
+        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 490, y + 210, 110, 40 });
 
         username.setName(Labels.USERNAME);
         password.setName(Labels.PASSWORD);
