@@ -74,7 +74,7 @@ public class LoginPanelView extends BaseView implements View {
     private void initializeComponents() {
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 420, y + 76, 250, 30 });
         password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 420, y + 136, 250, 30 });
-        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGIN, new int[] { x + 385, y + 230, 80, 40 });
+        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 230, 80, 40 });
         registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 480, y + 230, 110, 40 });
 
         username.setName(Labels.USERNAME);
