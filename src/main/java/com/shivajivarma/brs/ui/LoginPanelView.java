@@ -74,7 +74,6 @@ public class LoginPanelView extends BaseView implements View {
 
     private void initializeComponents() {
         Color jaclinery = new Color(248, 188, 8);
-        Color jaclinerr = new Color (220, 2, 11);
         Insets insets = new Insets(5, 10, 3, 10);
            
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 305, y + 55, 365, 30 });
