@@ -9,4 +9,6 @@ public class ResourcePaths {
 	public static final String GREENSEAT = "/images/greenSeat.jpg";
 	public static final String LOGIN = "/images/login.png";
 	public static final String REGISTER = "/images/register.png";
+	public static final String EYE_OPEN = "/images/eye_open.png";
+	public static final String EYE_CLOSED = "/images/eye_closed.png";
 }

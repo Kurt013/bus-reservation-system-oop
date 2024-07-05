@@ -29,7 +29,7 @@ public class ValidationUtil {
                 case "username" :
                     if (!value.equals("") && !Pattern.matches("[A-Za-z1-9._]+", value)){
                         field.setText(null);
-                        return "'" + field.getName() + "' field supports only alphabets, numbers, underscore and full stop.";
+                        return "Invalid Username! it supports only alphabets, numbers, underscore and full stop.";
                     }
                     break;
                 case "noSpaces" :
@@ -47,19 +47,24 @@ public class ValidationUtil {
                 case "mobile" :
                     if (!value.equals("") && (!Pattern.matches("[0-9]+", value) || value.length() != 11)) {
                     field.setText(null);
-                    return "'" + field.getName() + "' field supports only 11 digits.";
+                    return "Mobile number must be 11 digits.";
                 }
                     break;
                 case "email" :
                     if (!value.equals("") && !Pattern.matches("[A-Za-z]+@[A-Za-z]+[.][A-Za-z]+", value)){
                         field.setText(null);
-                        return "'" + field.getName() + "' field is not a valid email address.";
+                        return "Invalid Email Address.";
                     }
                     break;
                 case "password" :
                     if (!value.equals("") && !Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", value)){
                         field.setText(null);
-                        return "'" + field.getName() + "' field must be at least 8 characters long and include numbers, special characters, and letters.";
+                        return "Password must be at least 8 characters long and include numbers, special characters, and letters.";
+                    }
+                    break;
+                case "repassword" :
+                    if (!value.equals("") && !Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", value)){
+                        field.setText(null);
                     }
                     break;
             }
