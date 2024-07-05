@@ -13,12 +13,12 @@ public class Passenger implements Entity{
 	private String password;
 	private String name;
 	private String email;
-	private long mobile;
+	private String mobile;
 
 	public Passenger() {
 	}
 
-	public Passenger(int id, String username, String password, String name, String email, long mobile) {
+	public Passenger(int id, String username, String password, String name, String email, String mobile) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
@@ -74,11 +74,11 @@ public class Passenger implements Entity{
 		this.email = email;
 	}
 
-	public long getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(long mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 

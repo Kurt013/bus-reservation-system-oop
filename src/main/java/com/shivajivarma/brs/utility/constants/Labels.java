@@ -16,7 +16,7 @@ public class Labels {
 	public static final String REGISTERATION = "Registeration";
 	public static final String FULL_NAME = "Full Name:";
 	public static final String EMAIL = "Email:";
-	public static final String MOBILE = "Mobile Number (09+):";
+	public static final String MOBILE = "Mobile Number (+63):";
 	public static final String SUBMIT = "SUBMIT";
 	public static final String CANCEL = "CANCEL";
 	public static final String ENTER_TICKET_ID = "Enter you Ticket no.";

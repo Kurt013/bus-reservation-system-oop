@@ -29,7 +29,7 @@ public class RegistrationController implements Controller{
     	
     	registrationView.getCancelButton().addActionListener(new ActionAdapter() {
 			public void actionPerformed(ActionEvent ae) {
-				registrationView.refresh();
+				masterController.loginControl();
 			}
 		});
     	

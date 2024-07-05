@@ -101,16 +101,16 @@ public class RegistrationPanelView extends BaseView implements View{
 		inputFields.add(email);
 		
 		mobile.addKeyListener(new KeyAdapter() {
-
-            @Override
-            public void keyPressed(KeyEvent arg) {
-                int keyCode = arg.getKeyCode();
-                if ((keyCode > 47 && keyCode < 58) || keyCode == 45) {
-                	arg.consume();
-                }
-            }
-
-        });
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c = e.getKeyChar();
+				// Allow only digits
+				if (!Character.isDigit(c)) {
+					e.consume();
+				}
+			}
+		});
+		
 		
 		this.add(username);
 		this.add(fullname);
@@ -179,8 +179,8 @@ public class RegistrationPanelView extends BaseView implements View{
 		return new String(reEnterPassword.getPassword());
 	}
 
-	public int getMobile() {
-		return Integer.parseInt(mobile.getText());
+	public String getMobile() {
+		return mobile.getText();
 	}
 	
 	public String getEmail() {
