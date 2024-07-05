@@ -2,19 +2,15 @@ package com.shivajivarma.brs.model.bean;
 
 import com.shivajivarma.brs.model.entity.Reserve;
 
-/**
- * The Bean class, which holds full reservation details, it a logical bean with represent database view.
- *
- */
 public class ReservationBean extends Reserve implements Bean {
 
 	public static final String indentity = "Reservation";
 	
 	private String origin;
 	private String destination;
-	
 	private String departuretime;
 	private String arrivaltime;
+	private int fare;
 	
 	public ReservationBean(){
 	}
@@ -72,5 +68,14 @@ public class ReservationBean extends Reserve implements Bean {
 	public void setArrivaltime(String arrivaltime) {
 		this.arrivaltime = arrivaltime;
 	}
+
+	public int getFare() {
+		return fare;
+	}
+
+	public void setFare(int fare) {
+		this.fare = fare;
+	}
+
 
 }

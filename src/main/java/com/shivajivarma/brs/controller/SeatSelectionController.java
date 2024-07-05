@@ -111,6 +111,9 @@ public class SeatSelectionController implements Controller{
 			reservationBean.setArrivaltime(bus.getArrivalTime());
 			reservationBean.setDeparturetime(bus.getDepartureTime());
 			
+			// Set fare in ReservationBean
+			reservationBean.setFare(bus.getFare());
+
 			tickets.add(reservationBean);
 		} catch (EmptyResultDataAccessException e) {
 			System.out.print("Reservation Failed");

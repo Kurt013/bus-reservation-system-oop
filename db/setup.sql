@@ -57,7 +57,8 @@ CREATE VIEW `brs`.`reservation` AS
         `route`.`origin` AS `origin`,
         `route`.`destination` AS `destination`,
         `bus`.`departuretime` AS `departuretime`,
-        `bus`.`ARRIVALTIME` AS `arrivaltime`
+        `bus`.`ARRIVALTIME` AS `arrivaltime`,
+        `bus`.`fare` AS `fare`  -- Include fare column from bus table
     FROM
         ((`brs`.`reserve`
         JOIN `brs`.`bus`)

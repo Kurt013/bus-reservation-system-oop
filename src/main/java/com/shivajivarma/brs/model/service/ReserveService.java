@@ -11,7 +11,9 @@ import com.shivajivarma.brs.model.dao.ReserveDAO;
 import com.shivajivarma.brs.model.entity.Reserve;
 import com.shivajivarma.brs.utility.IOHelpers;
 
-
+/**
+ * @author <a href="http://shivajivarma.com" target="_blank">Shivaji Varma</a>
+ */
 public class ReserveService implements Service{
 	
 	/**
@@ -40,7 +42,6 @@ public class ReserveService implements Service{
 		}
 	}
 	
-	
 	public List<ReservationBean> getReservationHistory(int pid) throws EmptyResultDataAccessException{
 		
 		ReservationDAO reservationDAO = dbApplicationContext.getBean("reservationDAO", ReservationDAO.class);
@@ -61,6 +62,7 @@ public class ReserveService implements Service{
 		String html = IOHelpers.getFileAsString("./html/ticket-head.html");
 		
 		for (ReservationBean reservationBean : tickets) {
+
 			html = html + createTicketCard(reservationBean);
 		}
 		
@@ -71,6 +73,7 @@ public class ReserveService implements Service{
 	
 	private static String createTicketCard(ReservationBean reservationBean){
 		String card;
+
 		card = "<div class='card'>"+
 				  "<div class='card-header'>"+
 					"Ticket no : "+reservationBean.getId()+
@@ -88,7 +91,7 @@ public class ReserveService implements Service{
 						"<p class='card-text'><b>To :</b> "+reservationBean.getDestination()+"</p>"+
 						"<p class='card-text'><b>Date :</b> "+reservationBean.getDt()+"</p>"+
 						"<div class='card-text'><div class='input-group'><span class='input-group-addon'>Cost : Rs.</span>"+
-							"<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' disabled='disabled' value=100>"+
+							"<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' disabled='disabled' value='" + reservationBean.getFare() +"'>"+
 							  "<span class='input-group-addon'>.00</span>"+
 						"</div></div>"+
 					"</div>"+
