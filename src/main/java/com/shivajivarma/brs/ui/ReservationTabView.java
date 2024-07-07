@@ -85,6 +85,7 @@ public class ReservationTabView extends BaseView implements View {
         this.add(ViewComponentFactory.createJLabelNormal(Labels.ORIGIN, new int[]{x+220, y, 70, 30}, Color.white));
         this.add(ViewComponentFactory.createJLabelNormal(Labels.DESTINATION, new int[]{x + 500, y, 200, 30}, Color.white));
         this.add(ViewComponentFactory.createJLabelNormal(Labels.DATE, new int[]{x + 220, y + 120, 240, 30}, Color.white));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER2, new int[]{x + 237, y + 280, 240, 30}, Color.white));
     }
 
     private void initializeComponents() {

@@ -22,12 +22,14 @@ public class ViewComponentFactory {
 	public static final Font FONT_BUTTON;
 	public static final Font FONT_TABS;
 	public static final Font FONT_HOME;
+	public static final Font FONT_MIDNORMAL;
 
 	
 
 	static {
 		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBoldItalic.ttf", Font.BOLD, 24);
 		FONT_NORMAL = loadFont("/fonts/Montserrat-Bold.ttf", Font.PLAIN, 17);
+		FONT_MIDNORMAL = loadFont("/fonts/Montserrat-ExtraBold.ttf", Font.PLAIN, 20);
 		FONT_HOME = loadFont("/fonts/Montserrat-BoldItalic.ttf", Font.PLAIN, 19);
 		FONT_FIELD = loadFont("/fonts/Inter-SemiBold.ttf", Font.PLAIN, 17);
 		FONT_BUTTON = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf",Font.BOLD, 17);
@@ -59,6 +61,20 @@ public class ViewComponentFactory {
 
 	public static JLabel createJLabelLarge(String name, int[] coordinates, Color color) {
 		JLabel label = createJLabelLarge(name, color);
+		Dimension size = label.getPreferredSize();
+		label.setBounds(coordinates[0], coordinates[1], size.width, size.height);
+		return label;
+	}
+
+	public static JLabel createJLabelMidNormal(String name, Color color) {
+		JLabel label = new JLabel(name);
+		label.setFont(FONT_MIDNORMAL);
+		label.setForeground(color);
+		return label;
+	}
+
+	public static JLabel createJLabelMidNormal(String name, int[] coordinates, Color color) {
+		JLabel label = createJLabelMidNormal(name, color);
 		Dimension size = label.getPreferredSize();
 		label.setBounds(coordinates[0], coordinates[1], size.width, size.height);
 		return label;
@@ -146,6 +162,18 @@ public class ViewComponentFactory {
 		textField.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
 		return textField;
 	}
+	public static JTextField createJTextFieldMidNormal() {
+		JTextField textField = new JTextField();
+		textField.setFont(FONT_MIDNORMAL);
+		return textField;
+	}
+
+	public static JTextField createJTextFieldMidNormal(int[] coordinates) {
+		JTextField textField = createJTextFieldMidNormal();
+		textField.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+		return textField;
+	}
+
 
 	public static JPasswordField createJPasswordFieldNormal() {
 		JPasswordField passwordField = new JPasswordField();

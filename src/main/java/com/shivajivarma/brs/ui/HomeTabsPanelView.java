@@ -12,12 +12,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -33,6 +33,7 @@ public class HomeTabsPanelView extends BaseView implements View {
     private JLabel welcome, date;
     private JButton logoutButton;
     private BufferedImage backgroundImage;
+    private Timer timer;
 
     public HomeTabsPanelView() {
         super(); // Call superclass constructor
@@ -49,8 +50,8 @@ public class HomeTabsPanelView extends BaseView implements View {
         this.initializeLabels();
         this.initializeComponents();
         this.setupTabChangeListener();
-        this.setDate();
         this.setBackground(jaclinery);
+        this.startTimer();
     }
 
     @Override
@@ -68,6 +69,11 @@ public class HomeTabsPanelView extends BaseView implements View {
         SimpleDateFormat formatter = new SimpleDateFormat("EEEE, MMMM d, yyyy 'at' h:mm a");
         String formattedDate = formatter.format(currentDate);
         this.date.setText(formattedDate);
+    }
+
+    private void startTimer() {
+        timer = new Timer(1000, e -> setDate()); // Update every second (1000 milliseconds)
+        timer.start();
     }
 
     private void initializeLabels() {
@@ -97,8 +103,6 @@ public class HomeTabsPanelView extends BaseView implements View {
 
         this.add(tabs);
         this.add(logoutButton);
-
-       
 
         tabs.setUI(new CustomTabbedPaneUI(jaclinerr, Color.white, Color.white, jaclinerr));
     }
@@ -199,5 +203,4 @@ public class HomeTabsPanelView extends BaseView implements View {
             // Do nothing to remove the content border
         }
     }
-
 }
