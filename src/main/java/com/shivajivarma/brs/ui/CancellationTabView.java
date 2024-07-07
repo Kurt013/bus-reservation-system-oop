@@ -53,7 +53,7 @@ public class CancellationTabView extends BaseView implements View{
 	private void initializeLabels() {
 		this.add(ViewComponentFactory.createJLabelMidNormal(Labels.ENTER_TICKET_ID, new int[]{100, 130, 200, 20}, Color.white));
 		
-		this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER, new int[]{60, 295, 200, 20}, Color.white));
+		this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER, new int[]{59, 293, 200, 20}, Color.white));
 	}
 	
 	private void initializeComponents() {
