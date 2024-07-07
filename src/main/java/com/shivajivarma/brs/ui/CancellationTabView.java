@@ -18,7 +18,7 @@ public class CancellationTabView extends BaseView implements View{
 	private JButton submitButton;
 
 	public CancellationTabView() {
-		this.setBackground(Color.white);
+		this.setBackground(Color.yellow);
 		this.initializeLabels();
 		this.initializeComponents();
 	}

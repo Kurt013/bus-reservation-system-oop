@@ -92,12 +92,13 @@ public class RegistrationPanelView extends BaseView implements View {
     private void initializeComponents() {
         Insets insets = new Insets(5, 10, 3, 10);
         Color jaclinery = new Color(248, 188, 8);
+        
 
 
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 60, 250, 30 });
         fullname = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 120, 250, 30 });
-        password = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+180,200,30});
-        reEnterPassword = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+240,200,30});
+        password = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+180,215,30});
+        reEnterPassword = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+240,215,30});
         mobile = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 300, 250, 30 });
         email = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 360, 250, 30 });
         submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[] { x + 265, y + 420, 110, 40 }, Color.white, jaclinery);
@@ -143,12 +144,14 @@ public class RegistrationPanelView extends BaseView implements View {
             }
         });
 
+        
 
         // Toggle button to show/hide password using eye icons
         togglePasswordButton = new JButton(hideIcon);
-        togglePasswordButton.setBounds(x + 435, y + 180, 30, 30); 
+        togglePasswordButton.setBounds(x + 440, y + 180, 30, 30); 
         togglePasswordButton.setOpaque(true); 
-        togglePasswordButton.setBackground(yellowColor); 
+        togglePasswordButton.setBackground(Color.YELLOW); 
+   
         togglePasswordButton.setFocusPainted(false);        
         togglePasswordButton.setBorderPainted(false); 
         togglePasswordButton.addActionListener(new ActionListener() {
@@ -161,7 +164,7 @@ public class RegistrationPanelView extends BaseView implements View {
 
 
         toggleReEnterPasswordButton = new JButton(hideIcon);
-        toggleReEnterPasswordButton.setBounds(x + 435, y + 240, 30, 30); 
+        toggleReEnterPasswordButton.setBounds(x + 440, y + 240, 30, 30); 
         toggleReEnterPasswordButton.setOpaque(true); 
         toggleReEnterPasswordButton.setBackground(yellowColor); 
         toggleReEnterPasswordButton.setFocusPainted(false);        

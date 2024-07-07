@@ -35,7 +35,7 @@ public class LoginPanelView extends BaseView implements View {
     private Image backgroundImage;
     private boolean passwordVisible = false;
     private ImageIcon showIcon, hideIcon;
-    private Color yellowColor = new Color(255, 255, 0); // Yellow color
+     // Yellow color
 
 
     /**
@@ -101,7 +101,7 @@ public class LoginPanelView extends BaseView implements View {
         togglePasswordButton = new JButton(hideIcon);
         togglePasswordButton.setBounds(x + 625, y + 135, 35, 30);
         togglePasswordButton.setOpaque(true); 
-        togglePasswordButton.setBackground(yellowColor); 
+        togglePasswordButton.setBackground(Color.YELLOW); 
         togglePasswordButton.setFocusPainted(false);    
         togglePasswordButton.setBorderPainted(false); 
         togglePasswordButton.addActionListener(e -> togglePasswordVisibility());

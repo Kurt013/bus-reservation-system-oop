@@ -11,4 +11,6 @@ public class ResourcePaths {
 	public static final String REGISTER = "/images/register.png";
 	public static final String EYE_OPEN = "/images/eye_open.png";
 	public static final String EYE_CLOSED = "/images/eye_closed.png";
+	public static final String RESERVE = "/images/reserve.png";
+	public static final String RESERVE2 = "/images/reserve2.png";
 }

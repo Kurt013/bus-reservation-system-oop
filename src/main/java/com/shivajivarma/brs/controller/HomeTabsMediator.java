@@ -36,7 +36,7 @@ public class HomeTabsMediator implements Controller{
     	View historyTab = new ReservationHistoryTabView();
     	
     	homeTabs.insertTab(reservationTab, "Reservation ");
-    	homeTabs.insertTab(cancelTab, "Cancel ticket ");
+    	homeTabs.insertTab(cancelTab, "Cancel Ticket ");
     	homeTabs.insertTab(historyTab, "History ");
     	homeTabs.setWelcome(passengerService.getModel().getName());
     	

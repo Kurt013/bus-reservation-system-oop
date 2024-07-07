@@ -12,7 +12,7 @@ public class Labels {
 	public static final String PASSWORD2 = "Password:";
 	public static final String RE_ENTER_PASSWORD = "Re-Enter Password:";
 	public static final String REGISTER = "REGISTER";
-	public static final String REGISTER2 = "Complete the fields below to register: ";
+	public static final String REGISTER2 = "Create an account ";
 	public static final String REGISTERATION = "Registeration";
 	public static final String FULL_NAME = "Full Name:";
 	public static final String EMAIL = "Email:";
@@ -23,9 +23,9 @@ public class Labels {
 	public static final String TICKET_NO = "Ticket no.";
 	public static final String LOGOUT = "Logout";
 	public static final String PRINT = "Print";
-	public static final String ORIGIN = "Origin";
-	public static final String DESTINATION = "Destination";
-	public static final String DATE = "Date";
+	public static final String ORIGIN = "Origin: ";
+	public static final String DESTINATION = "Destination: ";
+	public static final String DATE = "Date: ";
 	public static final String BACK = "Back";
 	public static final String BOOK = "Book";
 	

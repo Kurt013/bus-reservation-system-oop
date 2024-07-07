@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -21,14 +20,20 @@ public class ViewComponentFactory {
 	public static final Font FONT_LARGE;
 	public static final Font FONT_FIELD;
 	public static final Font FONT_BUTTON;
+	public static final Font FONT_TABS;
+	public static final Font FONT_HOME;
+
+	
 
 	static {
 		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBoldItalic.ttf", Font.BOLD, 24);
 		FONT_NORMAL = loadFont("/fonts/Montserrat-Bold.ttf", Font.PLAIN, 17);
+		FONT_HOME = loadFont("/fonts/Montserrat-BoldItalic.ttf", Font.PLAIN, 19);
 		FONT_FIELD = loadFont("/fonts/Inter-SemiBold.ttf", Font.PLAIN, 17);
 		FONT_BUTTON = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf",Font.BOLD, 17);
-		FONT_SMALL = loadFont("/fonts/CustomFont.ttf", Font.PLAIN, 18);
-		FONT_LARGE = loadFont("/fonts/CustomFont.ttf", Font.BOLD, 40);
+		FONT_SMALL = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf", Font.PLAIN, 18);
+		FONT_LARGE = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf", Font.BOLD, 40);
+		FONT_TABS = loadFont("/fonts/Inter-ExtraBold.ttf", Font.BOLD, 18);
 	}
 
 	private static Font loadFont(String path, int style, int size) {
@@ -96,7 +101,8 @@ public class ViewComponentFactory {
 
 	public static JLabel createJLabelSmall(String name, int[] coordinates, Color color) {
 		JLabel label = createJLabelSmall(name, color);
-		label.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
+		Dimension size = label.getPreferredSize();
+		label.setBounds(coordinates[0], coordinates[1], size.width, size.height);
 		return label;
 	}
 
@@ -158,15 +164,5 @@ public class ViewComponentFactory {
 	/*
 	 * Combo boxes
 	 */
-	public static <T> JComboBox<T> createJComboBoxNormal(Class<T> type) {
-		JComboBox<T> comboBox = new JComboBox<>();
-		comboBox.setFont(FONT_NORMAL);
-		return comboBox;
-	}
 
-	public static <T> JComboBox<T> createJComboBoxNormal(int[] coordinates, Class<T> type) {
-		JComboBox<T> comboBox = createJComboBoxNormal(type);
-		comboBox.setBounds(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-		return comboBox;
-	}
 }
