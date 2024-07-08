@@ -2,7 +2,7 @@ package com.shivajivarma.brs.ui;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
+
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
@@ -64,8 +64,7 @@ public class ReservationTabView extends BaseView implements View {
             e.printStackTrace(); // Handle loading error here
         }
 
-        this.setBackground(Color.RED); // Set background color
-        this.setPreferredSize(new Dimension(1500, 1024)); // Set preferred size to maximize
+        
 
         this.initializeLabels();
         this.initializeComponents();

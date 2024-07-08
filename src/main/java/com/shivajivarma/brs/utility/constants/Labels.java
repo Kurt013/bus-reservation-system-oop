@@ -30,4 +30,6 @@ public class Labels {
 	public static final String BOOK = "Book";
 	public static final String REMINDER = "<html><i><b>Reminder: Once you cancel your ticket, it will be voided and you <br>will no longer be able to use it for travel. </b></i></html>";
 	public static final String REMINDER2 = "<html><i><b>Reminder: Select a future date and click 'submit' to continue. </b></i></html>";
+	public static final String REMINDER3 = "<html><i><b>To display ticket details, select the row with the ticket ID you wish to view, then click 'View Ticket'.</b></i></html>";
+
 }

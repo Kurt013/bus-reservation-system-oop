@@ -14,4 +14,5 @@ public class ResourcePaths {
 	public static final String RESERVE = "/images/reserve.png";
 	public static final String RESERVE2 = "/images/reserve2.png";
 	public static final String RESERVE3 = "/images/reserve3.png";
+	public static final String RESERVE4 = "/images/reserve4.png";
 }
