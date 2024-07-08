@@ -79,22 +79,21 @@ public class LoginPanelView extends BaseView implements View {
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 305, y + 55, 365, 30 });
         username.setMargin(insets);
 
-        password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 305, y + 135, 310, 30 });
+        password = ViewComponentFactory.createJPasswordFieldNormal(new int[] { x + 305, y + 135, 323, 30 });
         password.setMargin(insets);
         password.setEchoChar('•');
 
         // Toggle button to show/hide password using eye icons
         togglePasswordButton = new JButton(hideIcon);
-        togglePasswordButton.setBounds(x + 625, y + 135, 35, 30);
+        togglePasswordButton.setBounds(x + 634, y + 135, 35, 30);
         togglePasswordButton.setOpaque(true);
         togglePasswordButton.setBackground(Color.YELLOW);
         togglePasswordButton.setFocusPainted(false);
         togglePasswordButton.setBorderPainted(false);
         togglePasswordButton.addActionListener(e -> togglePasswordVisibility());
 
-        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 375, y + 210, 90, 40 }, Color.white, jaclinery);
-        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 480, y + 210, 120, 40 }, Color.white, jaclinery);
-
+        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
+        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 385, y + 235, 200, 35 }, Color.white, jaclinery);
         loginButton.setFocusPainted(false);
         loginButton.setBorderPainted(false);
         loginButton.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -103,10 +102,8 @@ public class LoginPanelView extends BaseView implements View {
         registerButton.setBorderPainted(false);
         registerButton.setBorder(new EmptyBorder(0, 0, 0, 0));
         
-
-
-        addHoverEffect(loginButton, jaclinery, jaclinery.darker(), Color.white, Color.black);
-        addHoverEffect(registerButton, jaclinery, Color.white, Color.white, Color.black);
+        addHoverEffect(loginButton, jaclinery, Color.white, Color.white, jaclinery);
+        addHoverEffect(registerButton, jaclinery, Color.white, Color.white, jaclinery);
 
         username.setName(Labels.USERNAME);
         password.setName(Labels.PASSWORD);

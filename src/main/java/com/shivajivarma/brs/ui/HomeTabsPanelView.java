@@ -21,7 +21,11 @@ import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.MouseInputAdapter;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
+import java.awt.event.MouseEvent;
+
+
 import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
@@ -91,12 +95,16 @@ public class HomeTabsPanelView extends BaseView implements View {
         tabs.setFont(ViewComponentFactory.FONT_TABS);
     
         Color jaclinerr = new Color(220, 2, 11);
+        Color jaclinerr2 = new Color(182, 4, 11);
         logoutButton = ViewComponentFactory.createJButtonNormal(Labels.LOGOUT, new int[]{900, 10, 100, 32}, Color.WHITE, jaclinerr);
 
         // Remove focus border from logout button
         logoutButton.setFocusPainted(false);
         logoutButton.setBorderPainted(false);
         logoutButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+        addHoverEffect(logoutButton, jaclinerr, jaclinerr2, Color.white, Color.white);
+    
         tabs.setFocusable(false);
         tabs.setBorder(new EmptyBorder(0, 0, 0, 0));
 
@@ -105,7 +113,24 @@ public class HomeTabsPanelView extends BaseView implements View {
 
         tabs.setUI(new CustomTabbedPaneUI(jaclinerr, Color.white, Color.white, jaclinerr));
     }
+    
+    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+        button.setBackground(originalColor);
+        button.setForeground(originalTextColor);
+        button.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+                button.setForeground(hoverTextColor);
+            }
 
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+                button.setForeground(originalTextColor);
+            }
+        });
+    }
     public void insertTab(View tab, String tabName) {
         tabs.add((JPanel) tab, tabName);
         this.revalidate();

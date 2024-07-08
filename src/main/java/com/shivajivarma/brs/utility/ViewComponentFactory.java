@@ -32,7 +32,7 @@ public class ViewComponentFactory {
 		FONT_MIDNORMAL = loadFont("/fonts/Montserrat-ExtraBold.ttf", Font.PLAIN, 20);
 		FONT_HOME = loadFont("/fonts/Montserrat-BoldItalic.ttf", Font.PLAIN, 19);
 		FONT_FIELD = loadFont("/fonts/Inter-SemiBold.ttf", Font.PLAIN, 17);
-		FONT_BUTTON = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf",Font.BOLD, 17);
+		FONT_BUTTON = loadFont("/fonts/Inter-Black.ttf",Font.BOLD, 17);
 		FONT_SMALL = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf", Font.PLAIN, 18);
 		FONT_LARGE = loadFont("/fonts/Fontspring-DEMO-grotesco-bold.otf", Font.BOLD, 40);
 		FONT_TABS = loadFont("/fonts/Inter-ExtraBold.ttf", Font.BOLD, 18);

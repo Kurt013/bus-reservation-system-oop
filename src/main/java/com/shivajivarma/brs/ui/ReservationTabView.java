@@ -17,7 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 import javax.swing.JList;
-
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.MouseInputAdapter;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import com.shivajivarma.brs.utility.DateUtil;
 import com.shivajivarma.brs.utility.ViewComponentFactory;
@@ -105,11 +106,15 @@ public class ReservationTabView extends BaseView implements View {
         year.addItem(DateUtil.currentYear());
         year.addItem(DateUtil.currentYear() + 1);
     
-        submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{x + 550, y + 220, 150, 40}, Color.white, jaclinery);
+        submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{x + 550, y + 220, 150, 35}, Color.white, jaclinery);
         
-        submitButton.setOpaque(true);  // Ensure the button is opaque to show the background color
+        
         submitButton.setVisible(false);
+        submitButton.setFocusPainted(false);
         submitButton.setBorderPainted(false);
+        submitButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+        addHoverEffect(submitButton, jaclinery, Color.white, Color.white, jaclinery);
     
         this.add(origin);
         this.add(destination);
@@ -163,6 +168,24 @@ public class ReservationTabView extends BaseView implements View {
 
             return this;
         }
+    }
+
+    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+        button.setBackground(originalColor);
+        button.setForeground(originalTextColor);
+        button.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+                button.setForeground(hoverTextColor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+                button.setForeground(originalTextColor);
+            }
+        });
     }
 
     public void addOrigin(String origin) {

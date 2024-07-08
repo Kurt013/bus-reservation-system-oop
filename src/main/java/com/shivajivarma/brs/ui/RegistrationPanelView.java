@@ -1,6 +1,7 @@
 package com.shivajivarma.brs.ui;
 
-
+import javax.swing.event.MouseInputAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -19,6 +20,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+
 
 
 import com.shivajivarma.brs.utility.ValidationUtil;
@@ -92,7 +96,6 @@ public class RegistrationPanelView extends BaseView implements View {
     private void initializeComponents() {
         Insets insets = new Insets(5, 10, 3, 10);
         Color jaclinery = new Color(248, 188, 8);
-        
 
 
         username = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 60, 250, 30 });
@@ -101,12 +104,19 @@ public class RegistrationPanelView extends BaseView implements View {
         reEnterPassword = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+240,215,30});
         mobile = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 300, 250, 30 });
         email = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 360, 250, 30 });
-        submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[] { x + 265, y + 420, 110, 40 }, Color.white, jaclinery);
-        cancelButton = ViewComponentFactory.createJButtonNormal(Labels.CANCEL, new int[] { x + 140, y + 420, 110, 40 }, Color.white, jaclinery);
+        submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[] { x + 265, y + 420, 110, 35 }, Color.white, jaclinery);
+        cancelButton = ViewComponentFactory.createJButtonNormal(Labels.CANCEL, new int[] { x + 140, y + 420, 110, 35 }, Color.white, jaclinery);
 
 
+        submitButton.setFocusPainted(false);
         submitButton.setBorderPainted(false);
+        submitButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+        cancelButton.setFocusPainted(false);
         cancelButton.setBorderPainted(false);
+        cancelButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+        addHoverEffect(submitButton, jaclinery, Color.white, Color.white, jaclinery);
+        addHoverEffect(cancelButton, jaclinery, Color.white, Color.white, jaclinery);
 
 
         username.setName(Labels.USERNAME);
@@ -216,7 +226,23 @@ public class RegistrationPanelView extends BaseView implements View {
         repasswordVisible = !repasswordVisible;
     }
 
+    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+        button.setBackground(originalColor);
+        button.setForeground(originalTextColor);
+        button.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+                button.setForeground(hoverTextColor);
+            }
 
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+                button.setForeground(originalTextColor);
+            }
+        });
+    }
     public boolean validateFields() {
 
 

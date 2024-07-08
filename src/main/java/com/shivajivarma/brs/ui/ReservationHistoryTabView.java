@@ -13,6 +13,8 @@ import java.awt.Graphics;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.MouseInputAdapter;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
@@ -64,7 +66,14 @@ public class ReservationHistoryTabView extends BaseView implements View {
     }
 
     private void initializeComponents() {
-        printButton = ViewComponentFactory.createJButtonNormal(Labels.PRINT, new int[]{910, 400, 80, 40}, Color.black, Color.gray);
+        Color jaclinery = new Color(248, 188, 8);
+        printButton = ViewComponentFactory.createJButtonNormal(Labels.PRINT, new int[]{750, 35, 170, 35}, Color.white, jaclinery);
+        
+        printButton.setFocusPainted(false);
+        printButton.setBorderPainted(false);
+        printButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+        addHoverEffect(printButton, jaclinery, Color.white, Color.white, jaclinery);
 
         table = new JTable(null, columns()) {
             public boolean isCellEditable(int arg0, int arg1) {
@@ -166,7 +175,7 @@ public class ReservationHistoryTabView extends BaseView implements View {
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(72, 85, 850, 200); // Adjust the position and size here
-        scrollPane.getViewport().setBackground(Color.YELLOW); // Set the background color for empty space
+        scrollPane.getViewport().setBackground(new Color(245, 245, 245)); // Set the background color for empty space
         scrollPane.setBorder(null); // Remove border from JScrollPane
         table.setBorder(null); // Remove border from JTable
 
@@ -188,6 +197,24 @@ public class ReservationHistoryTabView extends BaseView implements View {
         columns.addElement("Arrival");
         columns.addElement("Seat");
         return columns;
+    }
+
+    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+        button.setBackground(originalColor);
+        button.setForeground(originalTextColor);
+        button.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+                button.setForeground(hoverTextColor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+                button.setForeground(originalTextColor);
+            }
+        });
     }
 
     public JButton getPrintButton() {

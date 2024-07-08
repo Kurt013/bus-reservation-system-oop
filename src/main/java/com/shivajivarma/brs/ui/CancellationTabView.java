@@ -7,9 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.awt.Graphics;
 import java.awt.Insets;
+import java.awt.event.MouseEvent;
+
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.event.MouseInputAdapter;
 
 import com.shivajivarma.brs.utility.ValidationUtil;
 import com.shivajivarma.brs.utility.ViewComponentFactory;
@@ -59,10 +63,14 @@ public class CancellationTabView extends BaseView implements View{
 	private void initializeComponents() {
 		Color jaclinery = new Color(248, 188, 8);
 		ticketNumber = ViewComponentFactory.createJTextFieldMidNormal(new int[]{385, 125, 150, 40});
-		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{380, 230, 200, 40}, Color.white, jaclinery);
-		submitButton.setOpaque(true);  // Ensure the button is opaque to show the background color
+		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{385, 230, 150, 35}, Color.white, jaclinery);
+		
 		submitButton.setVisible(true); // Ensure the button is visible
-		submitButton.setBorderPainted(false);
+		submitButton.setFocusPainted(false);
+        submitButton.setBorderPainted(false);
+        submitButton.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+		addHoverEffect(submitButton, jaclinery, Color.white, Color.white, jaclinery);
 		
 		ticketNumber.setName(Labels.TICKET_NO);
 		ticketNumber.setMargin(new Insets(5, 40, 5, 40));
@@ -74,6 +82,23 @@ public class CancellationTabView extends BaseView implements View{
 		this.add(submitButton);
 	}
 	
+	private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+        button.setBackground(originalColor);
+        button.setForeground(originalTextColor);
+        button.addMouseListener(new MouseInputAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(hoverColor);
+                button.setForeground(hoverTextColor);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(originalColor);
+                button.setForeground(originalTextColor);
+            }
+        });
+    }
 	
 	public boolean validateFields(){
 		ArrayList<String> errors = new ArrayList<String>();
