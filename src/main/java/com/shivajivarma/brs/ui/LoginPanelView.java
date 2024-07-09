@@ -92,9 +92,10 @@ public class LoginPanelView extends BaseView implements View {
         togglePasswordButton.setBorderPainted(false);
         togglePasswordButton.addActionListener(e -> togglePasswordVisibility());
 
-        loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
+        // loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
+        loginButton = new RoundButton(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
         registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 385, y + 235, 200, 35 }, Color.white, jaclinery);
-        loginButton.setFocusPainted(false);
+
         loginButton.setBorderPainted(false);
         loginButton.setBorder(new EmptyBorder(0, 0, 0, 0));
         
