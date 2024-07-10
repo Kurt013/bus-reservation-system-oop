@@ -67,7 +67,7 @@ public class SeatSelectionController implements Controller{
 					reserveService.printTickets(tickets);
 					masterController.applicationControl();
 				}else{
-					Alert.successMessage(Messages.NO_SEAT_SELECTED);
+					Alert.errorMessage(Messages.NO_SEAT_SELECTED);
 				}
 			}
 		});
