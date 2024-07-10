@@ -83,7 +83,7 @@ public class HomeTabsPanelView extends BaseView implements View {
     private void initializeLabels() {
         Color jaclinerr = new Color(182, 4, 11);
         welcome = ViewComponentFactory.createJLabelNormal("This is where the welcome message will show up", new int[]{47, 6, 300, 30}, jaclinerr);
-        date = ViewComponentFactory.createJLabelNormal("This is where the date will show up", new int[]{683, 50, 300, 30}, jaclinerr);
+        date = ViewComponentFactory.createJLabelNormal("This is where the date and time will show up", new int[]{670, 50, 300, 30}, jaclinerr);
         welcome.setFont(ViewComponentFactory.FONT_HOME);
         this.add(welcome);
         this.add(date);

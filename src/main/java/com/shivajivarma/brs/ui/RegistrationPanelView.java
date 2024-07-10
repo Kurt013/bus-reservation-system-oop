@@ -104,8 +104,8 @@ public class RegistrationPanelView extends BaseView implements View {
         reEnterPassword = ViewComponentFactory.createJPasswordFieldNormal(new int[]{x+220,y+240,215,30});
         mobile = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 300, 250, 30 });
         email = ViewComponentFactory.createJTextFieldNormal(new int[] { x + 220, y + 360, 250, 30 });
-        submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[] { x + 265, y + 420, 110, 35 }, Color.white, jaclinery);
-        cancelButton = ViewComponentFactory.createJButtonNormal(Labels.CANCEL, new int[] { x + 140, y + 420, 110, 35 }, Color.white, jaclinery);
+        submitButton =new RoundButton(Labels.SUBMIT, new int[] { x + 265, y + 420, 110, 35 }, Color.white, jaclinery);
+        cancelButton = new RoundButton(Labels.CANCEL, new int[] { x + 140, y + 420, 110, 35 }, Color.white, jaclinery);
 
 
         submitButton.setFocusPainted(false);

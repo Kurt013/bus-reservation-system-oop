@@ -94,7 +94,7 @@ public class LoginPanelView extends BaseView implements View {
 
         // loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
         loginButton = new RoundButton(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
-        registerButton = ViewComponentFactory.createJButtonNormal(Labels.REGISTER, new int[] { x + 385, y + 235, 200, 35 }, Color.white, jaclinery);
+        registerButton = new RoundButton(Labels.REGISTER, new int[] { x + 385, y + 235, 200, 35 }, Color.white, jaclinery);
 
         loginButton.setBorderPainted(false);
         loginButton.setBorder(new EmptyBorder(0, 0, 0, 0));
