@@ -164,7 +164,6 @@ public class ReserveService implements Service{
 		".ticket-system .receipts .receipt {" +
 		"padding: 25px 30px;" +
 		"text-align: left;" +
-		"height: 450px;" +
 		"width: 88%;" +
 		"background-color: #fff;" +
 		"border-radius: 10px 10px 20px 20px;" +
@@ -184,6 +183,7 @@ public class ReserveService implements Service{
 		"flex-direction: column;" +
 		"min-width: 100px;" +
 		"}" +
+		".one { flex-basis: 100%; }" +
 		".ticket-system .receipts .receipt .details .item span {" +
 		"font-size: 0.8em;" +
 		"color: rgba(28, 28, 28, 0.7);" +
@@ -256,6 +256,10 @@ public class ReserveService implements Service{
 		"         <div class=\"receipt\">\n" +
 		"            <img class=\"airliner-logo\" src=\"https://jacliner.com/images/logo-jacliner.jpg\" alt=\"Airliner Logo\">\n" +
 		"            <div class=\"details\">\n" +
+		"               <div class=\"item one\">\n" +
+		"                  <span>Date</span>\n" +
+		"                  <h3>"+reservationBean.getDt()+"</h3>\n" +
+		"               </div>\n" +
 		"               <div class=\"item\">\n" +
 		"                  <span>Ticket No.</span>\n" +
 		"                  <h3>" +reservationBean.getId()+ "</h3>\n" +
@@ -287,10 +291,6 @@ public class ReserveService implements Service{
 		"               <div class=\"item\">\n" +
 		"                  <span>Destination</span>\n" +
 		"                  <h3>"+reservationBean.getDestination()+"</h3>\n" +
-		"               </div>\n" +
-		"               <div class=\"item\">\n" +
-		"                  <span>Date</span>\n" +
-		"                  <h3>"+reservationBean.getDt()+"</h3>\n" +
 		"               </div>\n" +
 		"               <div class=\"item\">\n" +
 		"                  <span>Cost</span>\n" +
