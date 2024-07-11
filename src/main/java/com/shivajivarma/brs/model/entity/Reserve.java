@@ -1,5 +1,7 @@
 package com.shivajivarma.brs.model.entity;
 
+
+
 /**
  * The Bean class, which holds reserve table details.
  * 
@@ -64,8 +66,8 @@ public class Reserve implements Entity {
 		return dt;
 	}
 
-	public void setDt(String dt) {
-		this.dt = dt;
+	public void setDt(String string) {
+		this.dt = string;
 	}
 
 	public String getTstamp() {

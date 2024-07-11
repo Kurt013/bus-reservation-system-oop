@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Scanner;
 
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
 
@@ -94,31 +95,221 @@ public class ReserveService implements Service{
     }
 	
 	private static String createTicketCard(ReservationBean reservationBean){
-		String card;
-
-		card = "<div class='card'>"+
-				  "<div class='card-header'>"+
-					"Ticket no : "+reservationBean.getId()+
-				  "</div>"+
-				  "<div class='card-block row'>"+
-					"<div class='col-md-6'>"+
-						"<p class='card-text'><b>Passenger id :</b> "+reservationBean.getPassengerID()+"</p>"+
-						"<p class='card-text'><b>Bus no. :</b> "+reservationBean.getBusID()+"</p>"+
-						"<p class='card-text'><b>Seat no. :</b> "+reservationBean.getSeat()+"</p>"+
-						"<p class='card-text'><b>Depature Time. :</b> "+reservationBean.getDeparturetime()+"</p>"+
-						"<p class='card-text'><b>Arrival Time. :</b> "+reservationBean.getArrivaltime()+"</p>"+
-					"</div>"+
-					"<div class='col-md-6'>"+
-						"<p class='card-text'><b>From :</b> "+reservationBean.getOrigin()+"</p>"+
-						"<p class='card-text'><b>To :</b> "+reservationBean.getDestination()+"</p>"+
-						"<p class='card-text'><b>Date :</b> "+reservationBean.getDt()+"</p>"+
-						"<div class='card-text'><div class='input-group'><span class='input-group-addon'>Cost : Rs.</span>"+
-							"<input type='text' class='form-control' aria-label='Amount (to the nearest dollar)' disabled='disabled' value='" + reservationBean.getFare() +"'>"+
-							  "<span class='input-group-addon'>.00</span>"+
-						"</div></div>"+
-					"</div>"+
-				  "</div>"+
-				"</div>";
+		
+		String card = "<!DOCTYPE html>\n" +
+		"<html lang=\"en\">\n" +
+		"<head>\n" +
+		"    <meta charset=\"UTF-8\">\n" +
+		"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+		"    <title>Ticket System</title>\n" +
+		"<style>" +
+		"* {" +
+		"box-sizing: border-box;" +
+		"}" +
+		"html, body {" +
+		"height: 100%;" +
+		"margin: 0;" +
+		"}" +
+		"body {" +
+		"@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');" +
+		"font-family: 'Ubuntu', sans-serif;" +
+		"background-color: #DC020B;" +
+		"height: 100%;" +
+		"-webkit-font-smoothing: antialiased;" +
+		"-moz-osx-font-smoothing: grayscale;" +
+		"text-align: center;" +
+		"color: #1c1c1c;" +
+		"display: flex;" +
+		"justify-content: center;" +
+		"}" +
+		".ticket-system {" +
+		"max-width: 385px;" +
+		"}" +
+		".ticket-system .top {" +
+		"display: flex;" +
+		"align-items: center;" +
+		"flex-direction: column;" +
+		"}" +
+		".ticket-system .top .title {" +
+		"font-weight: normal;" +
+		"font-size: 1.4em;" +
+		"text-align: left;" +
+		"margin-left: 20px;" +
+		"margin-bottom: 20px;" +
+		"color: #fff;" +
+		"}" +
+		".ticket-system .top .printer {" +
+		"width: 90%;" +
+		"height: 20px;" +
+		"border: 5px solid #fff;" +
+		"border-radius: 10px;" +
+		"box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2);" +
+		"}" +
+		".ticket-system .receipts-wrapper {" +
+		"overflow: hidden;" +
+		"margin-top: -10px;" +
+		"padding-bottom: 10px;" +
+		"}" +
+		".ticket-system .receipts {" +
+		"width: 100%;" +
+		"display: flex;" +
+		"align-items: center;" +
+		"flex-direction: column;" +
+		"transform: translateY(-510px);" +
+		"animation-duration: 2.5s;" +
+		"animation-delay: 500ms;" +
+		"animation-name: print;" +
+		"animation-fill-mode: forwards;" +
+		"}" +
+		".ticket-system .receipts .receipt {" +
+		"padding: 25px 30px;" +
+		"text-align: left;" +
+		"height: 450px;" +
+		"width: 88%;" +
+		"background-color: #fff;" +
+		"border-radius: 10px 10px 20px 20px;" +
+		"box-shadow: 1px 3px 8px 3px rgba(0, 0, 0, 0.2);" +
+		"}" +
+		".ticket-system .receipts .receipt .airliner-logo {" +
+		"max-width: 100px;" +
+		"margin-bottom: 20px;" +
+		"}" +
+		".ticket-system .receipts .receipt .details {" +
+		"display: flex;" +
+		"justify-content: space-between;" +
+		"flex-wrap: wrap;" +
+		"}" +
+		".ticket-system .receipts .receipt .details .item {" +
+		"display: flex;" +
+		"flex-direction: column;" +
+		"min-width: 100px;" +
+		"}" +
+		".ticket-system .receipts .receipt .details .item span {" +
+		"font-size: 0.8em;" +
+		"color: rgba(28, 28, 28, 0.7);" +
+		"font-weight: 500;" +
+		"}" +
+		".ticket-system .receipts .receipt .details .item h3 {" +
+		"margin-top: 10px;" +
+		"margin-bottom: 25px;" +
+		"}" +
+		".ticket-system .receipts .receipt.qr-code {" +
+		"height: 110px;" +
+		"min-height: unset;" +
+		"position: relative;" +
+		"border-radius: 20px 20px 10px 10px;" +
+		"display: flex;" +
+		"align-items: center;" +
+		"}" +
+		".ticket-system .receipts .receipt.qr-code::before {" +
+		"content: \"\";" +
+		"background: linear-gradient(to right, #fff 50%, #DC020B 50%);" +
+		"background-size: 22px 4px, 100% 4px;" +
+		"height: 4px;" +
+		"width: 90%;" +
+		"display: block;" +
+		"left: 0;" +
+		"right: 0;" +
+		"top: -1px;" +
+		"position: absolute;" +
+		"margin: auto;" +
+		"}" +
+	
+		".ticket-system .receipts .receipt.qr-code .description {" +
+		"margin-left: 20px;" +
+		"}" +
+		".ticket-system .receipts .receipt.qr-code .description h2 {" +
+		"margin: 0 0 5px 0;" +
+		"font-weight: 500;" +
+		"font-size: 18px;" +
+		"color: #DC020B;"+
+		"}" +
+		".ticket-system .receipts .receipt.qr-code .description p {" +
+		"margin: 0;" +
+		"font-weight: 400;" +
+		"font-size: 15px;" +
+		"}" +
+		"@keyframes print {" +
+		"0% {" +
+		"transform: translateY(-510px);" +
+		"}" +
+		"35% {" +
+		"transform: translateY(-395px);" +
+		"}" +
+		"70% {" +
+		"transform: translateY(-140px);" +
+		"}" +
+		"100% {" +
+		"transform: translateY(0);" +
+		"}" +
+		"}" +
+		"</style>" +
+		"</head>\n" +
+		"<body>\n" +
+		"<main class=\"ticket-system\">\n" +
+		"   <div class=\"top\">\n" +
+		"   <h1 class=\"title\"><i>Wait a second, your ticket is being printed...</i></h1>\n" +
+		"   <div class=\"printer\">\n" +
+		"   </div>\n" +
+		"   <div class=\"receipts-wrapper\">\n" +
+		"      <div class=\"receipts\">\n" +
+		"         <div class=\"receipt\">\n" +
+		"            <img class=\"airliner-logo\" src=\"https://jacliner.com/images/logo-jacliner.jpg\" alt=\"Airliner Logo\">\n" +
+		"            <div class=\"details\">\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Ticket No.</span>\n" +
+		"                  <h3>" +reservationBean.getId()+ "</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Passenger ID</span>\n" +
+		"                  <h3>"+reservationBean.getPassengerID()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Bus No.</span>\n" +
+		"                  <h3>"+reservationBean.getBusID()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Seat No.</span>\n" +
+		"                  <h3>"+reservationBean.getSeat()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Dept. Time</span>\n" +
+		"                  <h3>"+reservationBean.getDeparturetime()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Arr. Time</span>\n" +
+		"                  <h3>"+reservationBean.getArrivaltime()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Origin</span>\n" +
+		"                  <h3>"+reservationBean.getOrigin()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Destination</span>\n" +
+		"                  <h3>"+reservationBean.getDestination()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Date</span>\n" +
+		"                  <h3>"+reservationBean.getDt()+"</h3>\n" +
+		"               </div>\n" +
+		"               <div class=\"item\">\n" +
+		"                  <span>Cost</span>\n" +
+		"                  <h3> Php "+ reservationBean.getFare() +".00</h3>\n" +
+		"               </div>\n" +
+		"            </div>\n" +
+		"         </div>\n" +
+		"         <div class=\"receipt qr-code\">\n" +
+		"            <div class=\"description\">\n" +
+		"               <h2><b>Successfully Reserved!<b></h2>\n" +
+		"               <p><i>Please print or take a screenshot of this and present it to our staff.</i></p>\n" +
+		"            </div>\n" +
+		"         </div>\n" +
+		"      </div>\n" +
+		"   </div>\n" +
+		"</main>\n" +
+		"</body>\n" +
+		"</html>";
+		
 		return card;
 	}
 	
