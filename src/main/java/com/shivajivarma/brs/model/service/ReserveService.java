@@ -1,6 +1,10 @@
 package com.shivajivarma.brs.model.service;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Scanner;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -58,18 +62,36 @@ public class ReserveService implements Service{
 		return occupiedSeatNumbers;
 	}
 	
-	public void printTickets(List<ReservationBean> tickets) {
-		String html = IOHelpers.getFileAsString("./html/ticket-head.html");
-		
-		for (ReservationBean reservationBean : tickets) {
+	  public void printTickets(List<ReservationBean> tickets) {
+        // Load ticket-head.html from classpath
+        String html = loadResourceAsString("html/ticket-head.html");
 
-			html = html + createTicketCard(reservationBean);
-		}
-		
-		html = html + IOHelpers.getFileAsString("./html/ticket-end.html");
-		
-		IOHelpers.printHTML(html, "tickets");
-	}
+        // Append ticket cards for each reservation
+        for (ReservationBean reservationBean : tickets) {
+            html += createTicketCard(reservationBean);
+        }
+
+        // Load ticket-end.html from classpath
+        html += loadResourceAsString("html/ticket-end.html");
+
+        // Print the generated HTML
+        IOHelpers.printHTML(html, "tickets");
+    }
+
+    private String loadResourceAsString(String resourcePath) {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourcePath)) {
+            if (inputStream != null) {
+                try (Scanner scanner = new Scanner(inputStream, StandardCharsets.UTF_8.name()).useDelimiter("\\A")) {
+									return scanner.hasNext() ? scanner.next() : "";
+								}
+            } else {
+                throw new IOException("Resource not found: " + resourcePath);
+            }
+        } catch (IOException e) {
+            System.err.println("Error loading resource: " + e.getMessage());
+            return ""; // Handle error gracefully
+        }
+    }
 	
 	private static String createTicketCard(ReservationBean reservationBean){
 		String card;
