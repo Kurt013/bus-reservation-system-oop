@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\xampp\htdocs\bus-reservation-system-oop\bus-reservation-system-oop.jar</jar>
+  <outfile>C:\xampp\htdocs\bus-reservation-system-oop\jacliner-bus-reservation-system.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://javadl.oracle.com/webapps/download/AutoDL?BundleId=249851_43d62d619be4e416215729597d70b8ac</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>true</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\Kurt\Downloads\jacliner-logo.ico</icon>
+  <jre>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>true</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
