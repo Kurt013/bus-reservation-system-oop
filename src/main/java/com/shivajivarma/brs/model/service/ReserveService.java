@@ -281,7 +281,7 @@ public class ReserveService implements Service{
 		"                  <h3>"+reservationBean.getArrivaltime()+"</h3>\n" +
 		"               </div>\n" +
 		"               <div class=\"item\">\n" +
-		"                  <span>Origin</span>\n" +
+		"                  <span>Terminal</span>\n" +
 		"                  <h3>"+reservationBean.getOrigin()+"</h3>\n" +
 		"               </div>\n" +
 		"               <div class=\"item\">\n" +

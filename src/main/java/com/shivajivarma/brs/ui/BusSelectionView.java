@@ -85,7 +85,7 @@ public class BusSelectionView extends BaseView implements View {
         add(backButton);
 
         // Initialize the table
-        String[] columnNames = {"", "B Id", "Origin", "Destination", "Type", "Dept Tm", "Arr tm", "Availability", "Fare"};
+        String[] columnNames = {"", "B Id", "Terminal", "Destination", "Type", "Dept Tm", "Arr tm", "Availability", "Fare"};
         tableModel = new DefaultTableModel(columnNames, 0) {
             @Override
             public Class<?> getColumnClass(int column) {

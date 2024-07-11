@@ -191,10 +191,10 @@ public class ReservationHistoryTabView extends BaseView implements View {
         columns.addElement("Ticket ID");
         columns.addElement("BID");
         columns.addElement("Journey Date");
-        columns.addElement("Origin");
+        columns.addElement("Terminal");
         columns.addElement("Destination");
-        columns.addElement("Departure");
-        columns.addElement("Arrival");
+        columns.addElement("Dept Tm");
+        columns.addElement("Arr Tm");
         columns.addElement("Seat");
         return columns;
     }
