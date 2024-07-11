@@ -12,11 +12,16 @@ import com.shivajivarma.brs.utility.constants.Messages;
 public class MasterView {
 
     private JFrame frame;
+
     private MasterController controller = new MasterController(this);
 
     public MasterView() {
         frame = new JFrame(Labels.TITLE);
+        
+        ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("images/jacliner-logo.png"));
 
+        frame.setIconImage(icon.getImage());
+        
         // Setting look and feel
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");

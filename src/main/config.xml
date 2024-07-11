@@ -3,17 +3,17 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\xampp\htdocs\bus-reservation-system-oop\bus-reservation-system-oop.jar</jar>
-  <outfile>C:\xampp\htdocs\bus-reservation-system-oop\jacliner-bus-reservation-system.exe</outfile>
+  <outfile>C:\xampp\htdocs\bus-reservation-system-oop\Jacliner Bus Reservation.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl>https://www.oracle.com/java/technologies/downloads/</downloadUrl>
+  <downloadUrl></downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
-  <restartOnCrash>true</restartOnCrash>
+  <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
-  <icon>C:\Users\Kurt\Downloads\jacliner-logo.ico</icon>
+  <icon>C:\xampp\htdocs\bus-reservation-system-oop\target\classes\images\jacliner-logo.ico</icon>
   <jre>
     <path>%JAVA_HOME%;%PATH%</path>
     <requiresJdk>true</requiresJdk>
