@@ -2,10 +2,7 @@ package com.shivajivarma.brs.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-
 import javax.swing.*;
-
-
 
 import com.shivajivarma.brs.controller.MasterController;
 import com.shivajivarma.brs.utility.BorderLayoutPositionFactory;
@@ -33,10 +30,15 @@ public class MasterView {
         frame.setLayout(new BorderLayout());
         frame.setBounds(0, 0, 1024, 740);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+
+        // Center the frame on screen
+        frame.setLocationRelativeTo(null);
 
         // Give control to master controller
         controller.control(null);
+
+        // Make the frame visible after all settings
+        frame.setVisible(true);
     }
 
     public boolean insertPanel(View panel, String align) {
