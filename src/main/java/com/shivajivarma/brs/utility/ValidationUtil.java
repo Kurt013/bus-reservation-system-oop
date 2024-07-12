@@ -29,7 +29,7 @@ public class ValidationUtil {
                 case "username" :
                     if (!value.equals("") && !Pattern.matches("[A-Za-z1-9._]+", value)){
                         field.setText(null);
-                        return "Invalid Username! it supports only alphabets, numbers, underscore and full stop.";
+                        return "Invalid Username! It supports only alphabets, numbers, underscore and full stop.";
                     }
                     break;
                 case "noSpaces" :
