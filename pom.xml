@@ -6,9 +6,8 @@
 	<artifactId>brs</artifactId>
 	<version>2.1</version>
 
-	<name>Bus Reservation System</name>
-	<description>My mini project.</description>
-	<url>https://shivajivarma.com/project/bus-reservation-system/</url>
+	<name>Jacliner Bus Reservation System</name>
+	<description>Final project.</description>
 
 	<properties>
 		<!-- Generic properties -->
