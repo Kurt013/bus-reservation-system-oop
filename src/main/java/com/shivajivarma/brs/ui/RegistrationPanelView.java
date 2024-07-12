@@ -32,7 +32,6 @@ import com.shivajivarma.brs.utility.constants.Messages;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
 
-@SuppressWarnings("serial")
 public class RegistrationPanelView extends BaseView implements View {
 
 

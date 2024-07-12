@@ -29,7 +29,6 @@ import javax.swing.event.TableModelListener;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-@SuppressWarnings("serial")
 public class BusSelectionView extends BaseView implements View {
 
     private JButton submitButton, backButton;

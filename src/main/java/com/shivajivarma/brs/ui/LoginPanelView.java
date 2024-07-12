@@ -22,7 +22,6 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-@SuppressWarnings("serial")
 public class LoginPanelView extends BaseView implements View {
 
     // UI Components

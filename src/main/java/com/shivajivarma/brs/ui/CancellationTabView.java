@@ -21,7 +21,6 @@ import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
 
-@SuppressWarnings("serial")
 public class CancellationTabView extends BaseView implements View{
 	
 	private JTextField ticketNumber;

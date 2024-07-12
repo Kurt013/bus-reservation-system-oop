@@ -25,7 +25,6 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-@SuppressWarnings("serial")
 public class ReservationTabView extends BaseView implements View {
 
     private JButton submitButton;

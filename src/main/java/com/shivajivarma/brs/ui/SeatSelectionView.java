@@ -23,7 +23,6 @@ import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
 
-@SuppressWarnings("serial")
 public class SeatSelectionView extends BaseView implements View{
 
 	private List<JCheckBox> seats = new ArrayList<JCheckBox>();

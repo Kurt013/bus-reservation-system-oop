@@ -47,7 +47,7 @@ public class HomeTabsMediator implements Controller{
 		/*try {
 			reservationPanel = new ReservationPanel(mainFrame);
 		} catch (DBConnectException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		*/

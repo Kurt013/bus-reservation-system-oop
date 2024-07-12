@@ -24,10 +24,7 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-/**
- * Author: Shivaji Varma (contact@shivajivarma.com)
- */
-@SuppressWarnings("serial")
+
 public class ReservationHistoryTabView extends BaseView implements View {
 
     private DefaultTableModel tableModel;

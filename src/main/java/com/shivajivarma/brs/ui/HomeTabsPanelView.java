@@ -30,7 +30,6 @@ import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
-@SuppressWarnings("serial")
 public class HomeTabsPanelView extends BaseView implements View {
 
     private JTabbedPane tabs;
