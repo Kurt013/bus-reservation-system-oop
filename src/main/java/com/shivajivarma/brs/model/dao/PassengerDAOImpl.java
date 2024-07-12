@@ -8,7 +8,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 
 /**
  * The Service class, which contains business logic to update Passenger model.
- * @see Passenger
  */
 public class PassengerDAOImpl extends BaseDAO implements PassengerDAO {
 	
@@ -30,8 +29,6 @@ public class PassengerDAOImpl extends BaseDAO implements PassengerDAO {
 
 	/**
 	 * Following function retrieves Passenger data for given id.
-	 * @param id Passenger Id
-	 * @return Passenger object.
 	 */
     @Override
     public Passenger findById(int id) throws EmptyResultDataAccessException{
@@ -47,8 +44,6 @@ public class PassengerDAOImpl extends BaseDAO implements PassengerDAO {
     
     /**
 	 * Following function retrieves Passenger data for given username.
-	 * @param id Passenger Id
-	 * @return Passenger object.
 	 */
     @Override
     public Passenger findByUsername(String username) throws EmptyResultDataAccessException{

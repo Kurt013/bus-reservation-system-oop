@@ -3,8 +3,6 @@ package com.shivajivarma.brs.model.entity;
 /**
  * 
  * This is Bean class, which holds all the bus details.
- * 
- * @see PassengerService
  */
 public class Bus implements Entity {
 

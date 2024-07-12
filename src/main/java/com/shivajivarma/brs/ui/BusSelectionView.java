@@ -115,10 +115,7 @@ public class BusSelectionView extends BaseView implements View {
 
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
-                Component c = super.prepareRenderer(renderer, row, column);
-
-                // Alternate row colors
-                
+                Component c = super.prepareRenderer(renderer, row, column);                
 
                 // Center align text in all columns
                 if (c instanceof JLabel) {
@@ -185,11 +182,10 @@ public class BusSelectionView extends BaseView implements View {
 
         // Remove border from JScrollPane
         JScrollPane scrollPane = new JScrollPane(busTable);
-        scrollPane.setBounds(50, 115, 900, 160); // Adjust the height here (e.g., 300 instead of 400)
-        scrollPane.setBorder(null); // Remove the border
+        scrollPane.setBounds(50, 115, 900, 160); 
+        scrollPane.setBorder(null); 
         add(scrollPane);
 
-        // Add a listener to ensure only one checkbox is selected at a time
         tableModel.addTableModelListener(new TableModelListener() {
             @Override
             public void tableChanged(TableModelEvent e) {

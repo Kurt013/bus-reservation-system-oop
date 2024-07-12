@@ -5,7 +5,6 @@ package com.shivajivarma.brs.model.entity;
 /**
  * The Bean class, which holds reserve table details.
  * 
- * @see ReserveService
  */
 public class Reserve implements Entity {
 

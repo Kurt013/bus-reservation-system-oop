@@ -41,17 +41,6 @@ public class HomeTabsMediator implements Controller{
     	homeTabs.setWelcome(passengerService.getModel().getName());
     	
     	
-    	/*
-		 * Initializing elements and setting styles.
-		 */
-		/*try {
-			reservationPanel = new ReservationPanel(mainFrame);
-		} catch (DBConnectException e) {
-		
-			e.printStackTrace();
-		}
-		*/
-    	
     	reservationController = new ReservationController(reservationTab);
     	reservationController.control(this);
     	

@@ -39,7 +39,7 @@ public class HomeTabsPanelView extends BaseView implements View {
     private Timer timer;
 
     public HomeTabsPanelView() {
-        super(); // Call superclass constructor
+        super(); 
 
         try {
             // Load the background image using ResourcePaths.REGISTER

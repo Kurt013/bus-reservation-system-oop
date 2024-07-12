@@ -35,7 +35,7 @@ public class ReservationHistoryTabView extends BaseView implements View {
 
     public ReservationHistoryTabView() {
   
-        super(); // Call superclass constructor
+        super(); 
 
         try {
             // Load the background image using ResourcePaths.BANNER
@@ -80,7 +80,7 @@ public class ReservationHistoryTabView extends BaseView implements View {
 
         // Set the font of the table
         table.setFont(new Font("Arial", Font.PLAIN, 14));
-        table.setRowHeight(30); // Optional: Set a consistent row height
+        table.setRowHeight(30); 
 		
 
         TableColumn tc;
@@ -171,10 +171,10 @@ public class ReservationHistoryTabView extends BaseView implements View {
         });
 
         JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(72, 85, 850, 200); // Adjust the position and size here
-        scrollPane.getViewport().setBackground(new Color(245, 245, 245)); // Set the background color for empty space
-        scrollPane.setBorder(null); // Remove border from JScrollPane
-        table.setBorder(null); // Remove border from JTable
+        scrollPane.setBounds(72, 85, 850, 200); 
+        scrollPane.getViewport().setBackground(new Color(245, 245, 245)); 
+        scrollPane.setBorder(null); 
+        table.setBorder(null); 
 
         this.add(scrollPane);
         this.add(printButton);
@@ -182,9 +182,7 @@ public class ReservationHistoryTabView extends BaseView implements View {
 
     private static Vector<String> columns() {
         Vector<String> columns = new Vector<String>();
-        /*
-         * Populating history table column titles
-         */
+        
         columns.addElement("Ticket ID");
         columns.addElement("BID");
         columns.addElement("Journey Date");

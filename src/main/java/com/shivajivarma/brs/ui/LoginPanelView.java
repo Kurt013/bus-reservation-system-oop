@@ -33,12 +33,9 @@ public class LoginPanelView extends BaseView implements View {
     private boolean passwordVisible = false;
     private ImageIcon showIcon, hideIcon;
 
-    /**
-     * Constructor to initialize UI components and set up the view.
-     */
+    
     public LoginPanelView() {
-        super(); // Call superclass constructor
-
+        super(); 
         try {
             // Load the background image using ResourcePaths.BANNER
             backgroundImage = ImageIO.read(getClass().getResource(ResourcePaths.LOGIN));
@@ -115,7 +112,7 @@ public class LoginPanelView extends BaseView implements View {
         add(password);
         add(loginButton);
         add(registerButton);
-        add(togglePasswordButton); // Add toggle button to the panel
+        add(togglePasswordButton); 
     }
 
     private void togglePasswordVisibility() {
@@ -165,7 +162,6 @@ public class LoginPanelView extends BaseView implements View {
             for (String error : errors) {
                 message = message + error + "\n";
             }
-            // Alert.errorMessage(message); // You may implement your own error message handling
             return false;
         }
         return true;

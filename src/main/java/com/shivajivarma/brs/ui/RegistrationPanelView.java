@@ -43,11 +43,11 @@ public class RegistrationPanelView extends BaseView implements View {
     private boolean passwordVisible = false;
     private boolean repasswordVisible = false;
     private ImageIcon showIcon, hideIcon;
-    private Color yellowColor = new Color(255, 255, 0); // Yellow color
+    private Color yellowColor = new Color(255, 255, 0); 
 
 
     public RegistrationPanelView() {
-        super(); // Call superclass constructor
+        super(); 
 
 
         try {
@@ -202,12 +202,10 @@ public class RegistrationPanelView extends BaseView implements View {
         if (passwordVisible) {
             // Hide password
             password.setEchoChar('•');
-            //reEnterPassword.setEchoChar('•');
             togglePasswordButton.setIcon(hideIcon);
         } else {
             // Show password
             password.setEchoChar((char) 0);
-            //reEnterPassword.setEchoChar((char) 0);
             togglePasswordButton.setIcon(showIcon);
         }
         passwordVisible = !passwordVisible;

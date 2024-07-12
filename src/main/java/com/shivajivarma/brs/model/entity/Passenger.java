@@ -2,7 +2,6 @@ package com.shivajivarma.brs.model.entity;
 
 /**
  * The Bean class, which holds passenger properties.
- * @see PassengerService
  */
 public class Passenger implements Entity{
 	

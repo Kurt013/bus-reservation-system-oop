@@ -28,7 +28,7 @@ public class CancellationTabView extends BaseView implements View{
 	private BufferedImage backgroundImage;
 
 	public CancellationTabView() {
-		super(); // Call superclass constructor
+		super(); 
 
         try {
             // Load the background image using ResourcePaths.BANNER
@@ -64,7 +64,7 @@ public class CancellationTabView extends BaseView implements View{
 		ticketNumber = ViewComponentFactory.createJTextFieldMidNormal(new int[]{385, 125, 150, 40});
 		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{385, 230, 150, 35}, Color.white, jaclinery);
 		
-		submitButton.setVisible(true); // Ensure the button is visible
+		submitButton.setVisible(true); 
 		submitButton.setFocusPainted(false);
         submitButton.setBorderPainted(false);
         submitButton.setBorder(new EmptyBorder(0, 0, 0, 0));

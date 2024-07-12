@@ -55,7 +55,7 @@ public class ReservationTabView extends BaseView implements View {
 	
 
     public ReservationTabView() {
-        super(); // Call superclass constructor
+        super(); 
 
         try {
             // Load the background image using ResourcePaths.BANNER

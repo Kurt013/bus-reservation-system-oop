@@ -189,8 +189,5 @@ public class ViewComponentFactory {
 		return passwordField;
 	}
 
-	/*
-	 * Combo boxes
-	 */
 
 }
