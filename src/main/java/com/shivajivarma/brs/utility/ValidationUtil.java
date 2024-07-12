@@ -50,8 +50,8 @@ public class ValidationUtil {
                     return "Mobile number must be 11 digits.";
                 }
                     break;
-                case "email" :
-                    if (!value.equals("") && !Pattern.matches("[A-Za-z]+@[A-Za-z]+[.][A-Za-z]+", value)){
+                    case "email" :
+                    if (!value.equals("") && !Pattern.matches("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", value)){
                         field.setText(null);
                         return "Invalid Email Address.";
                     }
