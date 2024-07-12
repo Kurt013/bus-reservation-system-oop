@@ -12,7 +12,6 @@ public class Alert {
 
     // Custom fonts and colors
     private static final Font MESSAGE_FONT = new Font("Arial", Font.PLAIN, 14); // Custom font for message
-    private static final Font TITLE_FONT = new Font("Arial", Font.BOLD, 16); // Custom font for title
     private static final Color SUCCESS_COLOR = new Color(34, 139, 34); // Forest green for success
     private static final Color ERROR_COLOR = new Color(178, 34, 34); // Firebrick red for error
 
@@ -50,13 +49,7 @@ public class Alert {
 
         JDialog dialog = optionPane.createDialog(null, title);
         dialog.setIconImage(null); // Ensure no default icon is shown
-        dialog.setFont(TITLE_FONT); // Set custom font for the dialog title
         dialog.setVisible(true);
-    }
 
-    public static void main(String[] args) {
-        // Example usage
-        errorMessage("This is an error message.\nThis is another error message.");
-        successMessage("This is a success message.");
     }
 }
