@@ -299,7 +299,6 @@ public class ReserveService implements Service{
 		"         <div class=\"receipt qr-code\">\n" +
 		"            <div class=\"description\">\n" +
 		"               <h2><b>Successfully Reserved!<b></h2>\n" +
-		"               <p><i>Please print or take a screenshot of this and present it to our staff.</i></p>\n" +
 		"            </div>\n" +
 		"         </div>\n" +
 		"      </div>\n" +

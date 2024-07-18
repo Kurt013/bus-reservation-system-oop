@@ -4,6 +4,7 @@ public class ResourcePaths {
 	public static final String BANNER = "/images/banner.png";
 	public static final String REDSEAT = "/images/redSeat.png";
 	public static final String GREENSEAT = "/images/greenSeat.png";
+	public static final String PWDSEAT = "/images/pwd.png";
 	public static final String LOGIN = "/images/login.png";
 	public static final String REGISTER = "/images/register.png";
 	public static final String EYE_OPEN = "/images/eye_open.png";
