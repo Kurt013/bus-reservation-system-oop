@@ -6,7 +6,7 @@
 	<artifactId>brs</artifactId>
 	<version>2.1</version>
 
-	<name>Jacliner Bus Reservation System</name>
+	<name>JAC Liner Bus Reservation System</name>
 	<description>Final project.</description>
 
 	<properties>
