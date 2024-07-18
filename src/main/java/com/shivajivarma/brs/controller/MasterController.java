@@ -10,7 +10,6 @@ import com.shivajivarma.brs.ui.BusSelectionView;
 import com.shivajivarma.brs.ui.HomeTabsPanelView;
 import com.shivajivarma.brs.ui.LoginPanelView;
 import com.shivajivarma.brs.ui.MasterView;
-import com.shivajivarma.brs.ui.RegistrationPanelView;
 import com.shivajivarma.brs.ui.SeatSelectionView;
 import com.shivajivarma.brs.ui.View;
 
@@ -54,16 +53,6 @@ public class MasterController implements Controller{
     		this.applicationControl();
     }
     
-    public void registrationControl(){
-    	View registrationPanelView = new RegistrationPanelView();
-    	
-    	masterView.clear();
-    	masterView.insertPanel(bannerView, "north");
-    	masterView.insertPanel(registrationPanelView, "center");
-    	
-    	Controller registrationController = new RegistrationController(registrationPanelView);
-    	registrationController.control(this);
-    }
     
     public void applicationControl(){
     	View homeTabs = new HomeTabsPanelView();

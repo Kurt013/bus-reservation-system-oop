@@ -27,7 +27,7 @@ public class LoginPanelView extends BaseView implements View {
     // UI Components
     private JTextField username;
     private JPasswordField password;
-    private JButton loginButton, registerButton, togglePasswordButton;
+    private JButton loginButton, togglePasswordButton;
     private int x = 250, y = 125;
     private Image backgroundImage;
     private boolean passwordVisible = false;
@@ -90,17 +90,12 @@ public class LoginPanelView extends BaseView implements View {
 
         // loginButton = ViewComponentFactory.createJButtonNormal(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
         loginButton = new RoundButton(Labels.LOGINB, new int[] { x + 385, y + 190, 200, 35 }, Color.white, jaclinery);
-        registerButton = new RoundButton(Labels.REGISTER, new int[] { x + 385, y + 235, 200, 35 }, Color.white, jaclinery);
 
         loginButton.setBorderPainted(false);
         loginButton.setBorder(new EmptyBorder(0, 0, 0, 0));
         
-        registerButton.setFocusPainted(false);
-        registerButton.setBorderPainted(false);
-        registerButton.setBorder(new EmptyBorder(0, 0, 0, 0));
         
         addHoverEffect(loginButton, jaclinery, Color.white, Color.white, jaclinery);
-        addHoverEffect(registerButton, jaclinery, Color.white, Color.white, jaclinery);
 
         username.setName(Labels.USERNAME);
         password.setName(Labels.PASSWORD);
@@ -111,7 +106,6 @@ public class LoginPanelView extends BaseView implements View {
         add(username);
         add(password);
         add(loginButton);
-        add(registerButton);
         add(togglePasswordButton); 
     }
 
@@ -179,7 +173,4 @@ public class LoginPanelView extends BaseView implements View {
         return loginButton;
     }
 
-    public JButton getRegisterButton() {
-        return registerButton;
-    }
 }

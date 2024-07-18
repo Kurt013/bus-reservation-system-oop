@@ -82,16 +82,6 @@ public class SeatSelectionView extends BaseView implements View {
             }
         }
 
-			// Existing initialization code...
-		
-			// Calculate the x-coordinate for placing buttons on the right side
-			int buttonX = getWidth() + 850; // Adjust this value as needed for exact positioning
-		
-			// Position the buttons
-			bookButton.setBounds(buttonX, 248, 100, 30);
-			backButton.setBounds(buttonX, 298, 100, 30);
-		
-			// Add buttons to the view
 			this.add(bookButton);
 			this.add(backButton);
 		
@@ -135,9 +125,15 @@ public class SeatSelectionView extends BaseView implements View {
             icon = new JLabel(availableSeat); // Use availableSeat for other seats
         }
 
-        int xOffset = 20 + (col * 100) + ((4 - seatsInRow) * 80 / 2); // Increase spacing between seats
+        int xOffset = 20 + (col * 120) + ((4 - seatsInRow) * 80 / 2); // Increase spacing between seats
         if (col >= 2 && seatsInRow != 5) {
-            xOffset += 100; // Add space after the first two seats
+            xOffset += 120; // Add space after the first two seats
+        }
+        if (seatsInRow == 4) {
+            xOffset += 380; 
+        }
+        if (seatsInRow == 5) {
+            xOffset += 420; 
         }
 
 		

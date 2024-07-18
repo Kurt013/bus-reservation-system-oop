@@ -50,11 +50,6 @@ public class LoginController implements Controller{
 			}
 		});
     	
-    	loginView.getRegisterButton().addActionListener(new ActionAdapter() {
-			public void actionPerformed(ActionEvent ae) {
-				masterController.registrationControl();
-			}
-		});
     	
     }
     

@@ -23,8 +23,8 @@ public class Labels {
 	public static final String TICKET_NO = "Ticket no.";
 	public static final String LOGOUT = "Logout";
 	public static final String PRINT = "View Ticket";
-	public static final String ORIGIN = "Select Terminal: ";
-	public static final String DESTINATION = "Destination: ";
+	public static final String ORIGIN = "Terminal: ";
+	public static final String DESTINATION = "Select Destination: ";
 	public static final String DATE = "Date: ";
 	public static final String BACK = "BACK";
 	public static final String BOOK = "BOOK";
