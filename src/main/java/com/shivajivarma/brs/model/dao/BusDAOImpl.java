@@ -18,7 +18,7 @@ public class BusDAOImpl extends BaseDAO implements BusDAO{
 
 	public List<Bus> findByRouteAndDate(Route route, String date) throws EmptyResultDataAccessException{
 		
-		String query = "select ID,AC,DEPARTURETIME,ARRIVALTIME,FARE,(select 40-count(*) from reserve where busid=bus.id and dt=STR_TO_DATE(?,'%d-%M-%Y'))  as AVAILABLITY"+
+		String query = "select ID,AC,DEPARTURETIME,ARRIVALTIME,FARE,(select 49-count(*) from reserve where busid=bus.id and dt=STR_TO_DATE(?,'%d-%M-%Y'))  as AVAILABLITY"+
 		" from "+table+
 		" where routeid in (select id from route where origin=? and destination=?)";
 		

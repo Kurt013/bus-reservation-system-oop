@@ -78,7 +78,7 @@ public class SeatSelectionView extends BaseView implements View{
 
 
 		
-		for (int i =1 ; i <=40; i++) {
+		for (int i =1 ; i <=49; i++) {
 			this.addSeat();
 		}
 		
