@@ -3,7 +3,7 @@ package com.shivajivarma.brs.utility.constants;
 
 public class Labels {
 	
-	public static final String TITLE = "JacLiner Bus Reservation System";
+	public static final String TITLE = "JAC Liner Bus Reservation System";
 	public static final String LOGIN = "Staff Login";
 	public static final String LOGINB = "LOGIN";
 	public static final String USERNAME = "Enter your username:";

@@ -82,10 +82,8 @@ public class SeatSelectionView extends BaseView implements View {
             }
         }
 
-			this.add(bookButton);
-			this.add(backButton);
-		
-		
+        this.add(bookButton);
+        this.add(backButton);
     }
 
     public JButton getBookButton() {
@@ -119,10 +117,10 @@ public class SeatSelectionView extends BaseView implements View {
         JLabel icon;
 
         int seatIndex = row * 4 + col + 1;
-        if (seatIndex <= 4) {
-            icon = new JLabel(pwdSeat); // Use pwdSeat for the first four seats
+        if (seatIndex <= 8) { // Use pwdSeat for seats 1 to 8
+            icon = new JLabel(pwdSeat);
         } else {
-            icon = new JLabel(availableSeat); // Use availableSeat for other seats
+            icon = new JLabel(availableSeat);
         }
 
         int xOffset = 20 + (col * 120) + ((4 - seatsInRow) * 80 / 2); // Increase spacing between seats
@@ -136,19 +134,23 @@ public class SeatSelectionView extends BaseView implements View {
             xOffset += 420; 
         }
 
-		
-
         seat.setEnabled(true);
         seat.setBounds(xOffset, 90 + (row * 50), 20, 20);
         seat.setActionCommand(Integer.toString(seatIndex));
         seats.add(seat);
 
-        icon.setBounds(xOffset + 22, 70 + (row * 50), 70, 70);
+        icon.setBounds(xOffset + 22, 70 + (row * 50), 65, 65);
         icons.add(icon);
 
         this.add(seat);
         this.add(icon);
-        this.add(ViewComponentFactory.createJLabelNormal(Integer.toString(seatIndex), new int[]{xOffset + 68, 77 + (row * 50), 30, 20}, Color.black));
+        JLabel seatNumberLabel = ViewComponentFactory.createJLabelNormal(Integer.toString(seatIndex), new int[]{xOffset + 68, 77 + (row * 50), 30, 20}, Color.black);
+        this.add(seatNumberLabel);
+        seatNumberLabel.setOpaque(true);
+        seatNumberLabel.setBackground(new Color(255, 255, 255, 0)); // Transparent background for seat number label
+        seatNumberLabel.setForeground(Color.black); // Ensure the text color is set to black
+        seatNumberLabel.setVisible(true);
+        setComponentZOrder(seatNumberLabel, 0);
     }
 
     public void disableSeat(int seatNumber) {

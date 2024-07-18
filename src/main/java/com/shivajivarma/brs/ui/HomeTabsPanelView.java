@@ -25,7 +25,6 @@ import javax.swing.event.MouseInputAdapter;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 import java.awt.event.MouseEvent;
 
-
 import com.shivajivarma.brs.utility.ViewComponentFactory;
 import com.shivajivarma.brs.utility.constants.Labels;
 import com.shivajivarma.brs.utility.constants.ResourcePaths;
@@ -39,7 +38,7 @@ public class HomeTabsPanelView extends BaseView implements View {
     private Timer timer;
 
     public HomeTabsPanelView() {
-        super(); 
+        super();
 
         try {
             // Load the background image using ResourcePaths.REGISTER
@@ -81,9 +80,10 @@ public class HomeTabsPanelView extends BaseView implements View {
 
     private void initializeLabels() {
         Color jaclinerr = new Color(182, 4, 11);
-        welcome = ViewComponentFactory.createJLabelNormal("This is where the welcome message will show up", new int[]{47, 6, 300, 30}, jaclinerr);
+        welcome = ViewComponentFactory.createJLabelNormal("Hey there, Welcome!", new int[]{47, 6, 400, 30}, jaclinerr);
         date = ViewComponentFactory.createJLabelNormal("This is where the date and time will show up", new int[]{670, 50, 300, 30}, jaclinerr);
         welcome.setFont(ViewComponentFactory.FONT_HOME);
+        welcome.setBounds(47, 3, 400, 30);
         this.add(welcome);
         this.add(date);
     }
@@ -92,10 +92,11 @@ public class HomeTabsPanelView extends BaseView implements View {
         tabs = new JTabbedPane();
         tabs.setBounds(0, 40, 1024, 500);
         tabs.setFont(ViewComponentFactory.FONT_TABS);
-    
+
         Color jaclinerr = new Color(220, 2, 11);
         Color jaclinerr2 = new Color(182, 4, 11);
-        logoutButton = ViewComponentFactory.createJButtonNormal(Labels.LOGOUT, new int[]{900, 10, 100, 32}, Color.WHITE, jaclinerr);
+        logoutButton = ViewComponentFactory.createJButtonNormal(Labels.LOGOUT, new int[] { 900, 10, 100, 32 },
+                Color.WHITE, jaclinerr);
 
         // Remove focus border from logout button
         logoutButton.setFocusPainted(false);
@@ -103,7 +104,7 @@ public class HomeTabsPanelView extends BaseView implements View {
         logoutButton.setBorder(new EmptyBorder(0, 0, 0, 0));
 
         addHoverEffect(logoutButton, jaclinerr, jaclinerr2, Color.white, Color.white);
-    
+
         tabs.setFocusable(false);
         tabs.setBorder(new EmptyBorder(0, 0, 0, 0));
 
@@ -112,8 +113,9 @@ public class HomeTabsPanelView extends BaseView implements View {
 
         tabs.setUI(new CustomTabbedPaneUI(jaclinerr, Color.white, Color.white, jaclinerr));
     }
-    
-    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor, Color hoverTextColor) {
+
+    private void addHoverEffect(JButton button, Color originalColor, Color hoverColor, Color originalTextColor,
+            Color hoverTextColor) {
         button.setBackground(originalColor);
         button.setForeground(originalTextColor);
         button.addMouseListener(new MouseInputAdapter() {
@@ -130,6 +132,7 @@ public class HomeTabsPanelView extends BaseView implements View {
             }
         });
     }
+
     public void insertTab(View tab, String tabName) {
         tabs.add((JPanel) tab, tabName);
         this.revalidate();
@@ -142,10 +145,6 @@ public class HomeTabsPanelView extends BaseView implements View {
 
     public JTabbedPane getTabs() {
         return tabs;
-    }
-
-    public void setWelcome(String username) {
-        this.welcome.setText("Welcome, " + username);
     }
 
     public void setDate(String date) {
@@ -170,7 +169,8 @@ public class HomeTabsPanelView extends BaseView implements View {
         private Color selectedTextColor;
         private Color unselectedTextColor;
 
-        public CustomTabbedPaneUI(Color selectedColor, Color unselectedColor, Color selectedTextColor, Color unselectedTextColor) {
+        public CustomTabbedPaneUI(Color selectedColor, Color unselectedColor, Color selectedTextColor,
+                Color unselectedTextColor) {
             this.selectedColor = selectedColor;
             this.unselectedColor = unselectedColor;
             this.selectedTextColor = selectedTextColor;
@@ -184,7 +184,8 @@ public class HomeTabsPanelView extends BaseView implements View {
         }
 
         @Override
-        protected void paintTabBackground(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h, boolean isSelected) {
+        protected void paintTabBackground(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h,
+                boolean isSelected) {
             g.setColor(isSelected ? selectedColor : unselectedColor);
             int arcWidth = 20;
             int arcHeight = 20;
@@ -194,7 +195,8 @@ public class HomeTabsPanelView extends BaseView implements View {
         }
 
         @Override
-        protected void paintText(Graphics g, int tabPlacement, Font font, FontMetrics metrics, int tabIndex, String title, Rectangle textRect, boolean isSelected) {
+        protected void paintText(Graphics g, int tabPlacement, Font font, FontMetrics metrics, int tabIndex,
+                String title, Rectangle textRect, boolean isSelected) {
             Graphics2D g2d = (Graphics2D) g;
             g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -217,7 +219,8 @@ public class HomeTabsPanelView extends BaseView implements View {
         }
 
         @Override
-        protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h, boolean isSelected) {
+        protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h,
+                boolean isSelected) {
             // Do nothing to remove the tab border
         }
 

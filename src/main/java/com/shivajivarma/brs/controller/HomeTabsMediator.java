@@ -38,7 +38,7 @@ public class HomeTabsMediator implements Controller{
     	homeTabs.insertTab(reservationTab, "Reservation ");
     	homeTabs.insertTab(cancelTab, "Cancel Ticket ");
     	homeTabs.insertTab(historyTab, "History ");
-    	homeTabs.setWelcome(passengerService.getModel().getName());
+
     	
     	
     	reservationController = new ReservationController(reservationTab);
