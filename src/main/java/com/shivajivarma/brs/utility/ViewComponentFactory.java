@@ -27,7 +27,7 @@ public class ViewComponentFactory {
 	
 
 	static {
-		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBoldItalic.ttf", Font.BOLD, 24);
+		FONT_HEADER = loadFont("/fonts/Montserrat-ExtraBold.ttf", Font.BOLD, 24);
 		FONT_NORMAL = loadFont("/fonts/Montserrat-Bold.ttf", Font.PLAIN, 17);
 		FONT_MIDNORMAL = loadFont("/fonts/Montserrat-ExtraBold.ttf", Font.PLAIN, 20);
 		FONT_HOME = loadFont("/fonts/Montserrat-BoldItalic.ttf", Font.PLAIN, 19);

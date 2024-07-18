@@ -63,7 +63,7 @@ public class LoginPanelView extends BaseView implements View {
 
     private void initializeLabels() {
         Color jacliner = new Color(246, 209, 0);
-        add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 375, y - 40, 120, 28 }, jacliner));
+        add(ViewComponentFactory.createJLabelHeader(Labels.LOGIN, new int[] { x + 405, y - 40, 120, 28 }, jacliner));
         add(ViewComponentFactory.createJLabelNormal(Labels.USERNAME, new int[] { x + 305, y + 25, 150, 20 }, Color.white));
         add(ViewComponentFactory.createJLabelNormal(Labels.PASSWORD, new int[] { x + 305, y + 105, 150, 20 }, Color.white));
     }

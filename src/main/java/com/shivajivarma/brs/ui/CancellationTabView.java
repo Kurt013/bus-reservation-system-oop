@@ -54,15 +54,15 @@ public class CancellationTabView extends BaseView implements View{
 
 	
 	private void initializeLabels() {
-		this.add(ViewComponentFactory.createJLabelMidNormal(Labels.ENTER_TICKET_ID, new int[]{100, 130, 200, 20}, Color.white));
+		this.add(ViewComponentFactory.createJLabelMidNormal(Labels.ENTER_TICKET_ID, new int[]{50, 130, 200, 20}, Color.white));
 		
 		this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER, new int[]{59, 293, 200, 20}, Color.white));
 	}
 	
 	private void initializeComponents() {
 		Color jaclinery = new Color(248, 188, 8);
-		ticketNumber = ViewComponentFactory.createJTextFieldMidNormal(new int[]{385, 125, 150, 40});
-		submitButton = ViewComponentFactory.createJButtonNormal(Labels.SUBMIT, new int[]{385, 230, 150, 35}, Color.white, jaclinery);
+		ticketNumber = ViewComponentFactory.createJTextFieldMidNormal(new int[]{420 , 125, 150, 40});
+		submitButton = ViewComponentFactory.createJButtonNormal(Labels.CANCELTIX, new int[]{405, 230, 180, 35}, Color.white, jaclinery);
 		
 		submitButton.setVisible(true); 
 		submitButton.setFocusPainted(false);
