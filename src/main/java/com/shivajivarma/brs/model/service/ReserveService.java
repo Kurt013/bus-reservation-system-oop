@@ -93,6 +93,14 @@ public class ReserveService implements Service{
     }
 	
 	private static String createTicketCard(ReservationBean reservationBean){
+		int fare;
+		boolean getDiscounted = reservationBean.getDiscounted();
+		if (getDiscounted) {
+			fare = (int) (Math.ceil(reservationBean.getFare() * 0.8));
+		}
+		else {
+			fare = reservationBean.getFare();
+		}
 		
 		String card = "<!DOCTYPE html>\n" +
 		"<html lang=\"en\">\n" +
@@ -292,7 +300,7 @@ public class ReserveService implements Service{
 		"               </div>\n" +
 		"               <div class=\"item\">\n" +
 		"                  <span>Cost</span>\n" +
-		"                  <h3> Php "+ reservationBean.getFare() +".00</h3>\n" +
+		"                  <h3> Php "+ fare +".00 </h3>\n" +
 		"               </div>\n" +
 		"            </div>\n" +
 		"         </div>\n" +
