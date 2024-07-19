@@ -23,7 +23,7 @@ import com.shivajivarma.brs.utility.constants.ResourcePaths;
 public class SeatSelectionView extends BaseView implements View {
 
     private List<JCheckBox> seats = new ArrayList<>();
-    public List<Boolean> seatTypes = new ArrayList<>();
+    private List<Boolean> seatTypes = new ArrayList<>();
     private List<JLabel> icons = new ArrayList<JLabel>();
     private BufferedImage backgroundImage;
 
@@ -97,6 +97,13 @@ public class SeatSelectionView extends BaseView implements View {
                 seatTypes.add(false);
             }
         }
+
+        for (JCheckBox seat : seats) {
+            seat.addActionListener(e -> {
+                seatTypes.set(seats.indexOf(seat), seat.isSelected() && discountToggled);
+            });
+        }
+
 
         this.add(bookButton);
         this.add(backButton);
@@ -174,15 +181,14 @@ public class SeatSelectionView extends BaseView implements View {
         return seats;
     }
 
+    public List<Boolean> getDisc() {
+        return seatTypes;
+    }
+
      private void updateSeatIcons() {
-        
         for (int i = 0; i < seats.size(); i++) {
             JLabel icon = icons.get(i);
             ImageIcon currentIcon = (ImageIcon) icon.getIcon();
-            
-            if (seats.get(i).isSelected() && discountToggled) {
-                seatTypes.set(i, true);
-            }
 
             /* Shows the PWD seats */
             if (!seats.get(i).isSelected() && i < 8) {
@@ -194,4 +200,5 @@ public class SeatSelectionView extends BaseView implements View {
             }
         }
     }
+
 }

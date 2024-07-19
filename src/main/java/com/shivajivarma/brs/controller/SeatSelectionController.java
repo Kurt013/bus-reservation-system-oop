@@ -54,14 +54,17 @@ public class SeatSelectionController implements Controller{
 			public void actionPerformed(ActionEvent ae) {
 				masterController.busSelectionControl(route, date);
 			}
+
+
 		});
+
     	
     	seatSelectionView.getBookButton().addActionListener(new ActionAdapter() {
 				public void actionPerformed(ActionEvent ae) {
 					for (int i = 0; i < seatSelectionView.getSeats().size(); i++) {
-						if (seatSelectionView.getSeats().get(i).isSelected()) {
-							JCheckBox seat = seatSelectionView.getSeats().get(i);
-							_this.reserve(Integer.parseInt(seat.getActionCommand()), seatSelectionView.seatTypes.get(i));
+						JCheckBox seat = seatSelectionView.getSeats().get(i);
+						if (seat.isSelected()) {	
+							_this.reserve(Integer.parseInt(seat.getActionCommand()), seatSelectionView.getDisc().get(i));
 						}
 					}
 					if(!tickets.isEmpty()){
