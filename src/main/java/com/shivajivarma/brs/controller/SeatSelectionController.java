@@ -101,12 +101,7 @@ public class SeatSelectionController implements Controller{
 			reserve.setDt(date);
 			reserve.setTstamp(DateUtil.getTimeStamp());
 			reserve.setSeat(seatNumber);
-			if (seatSelectionView.applyDiscount) {
-				reserve.setDiscounted(true);				
-			}
-			else {
-				reserve.setDiscounted(false);
-			}
+			reserve.setDiscounted(seatSelectionView.applyDiscount);				
 			int ticketNum = reserveService.reserve(reserve);
 			
 			reserve.setId(ticketNum);
