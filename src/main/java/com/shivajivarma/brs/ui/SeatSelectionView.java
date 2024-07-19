@@ -181,7 +181,10 @@ public class SeatSelectionView extends BaseView implements View {
             ImageIcon currentIcon = (ImageIcon) icon.getIcon();
             
             if (seats.get(i).isSelected() && discountToggled) {
-                seatTypes.add(i, true);
+                seatTypes.set(i, true);
+            }
+            else {
+                seatTypes.set(i, false);
             }
 
             /* Shows the PWD seats */
