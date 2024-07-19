@@ -126,14 +126,9 @@ public class SeatSelectionView extends BaseView implements View {
 
     private void addSeat(int row, int col, int seatsInRow) {
         JCheckBox seat = new JCheckBox();
-        JLabel icon;
+        JLabel icon = new JLabel(availableSeat);
 
         int seatIndex = row * 4 + col + 1;
-        if (seatIndex <= 8) { // Use pwdSeat for seats 1 to 8
-            icon = new JLabel(pwdSeat);
-        } else {
-            icon = new JLabel(availableSeat);
-        }
 
         int xOffset = 20 + (col * 120) + ((4 - seatsInRow) * 80 / 2); // Increase spacing between seats
         if (col >= 2 && seatsInRow != 5) {
