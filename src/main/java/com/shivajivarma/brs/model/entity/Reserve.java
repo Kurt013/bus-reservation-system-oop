@@ -16,25 +16,27 @@ public class Reserve implements Entity {
 	private String dt;
 	private String tstamp;
 	private int seat;
+	private boolean discounted;
 
 	public Reserve() {
 	}
 
 	public Reserve(int id, int passengerID, int busID, String dt, String tstamp,
-			int seat) {
+			int seat, boolean discounted) {
 		this.id = id;
 		this.passengerID = passengerID;
 		this.busID = busID;
 		this.dt = dt;
 		this.tstamp = tstamp;
 		this.seat = seat;
+		this.discounted = discounted;
 	}
 
 	@Override
 	public String toString() {
 		return "Reserve::[ID=" + id + ",PID=" + passengerID + ",BID=" + busID
 				+ ",Date=" + dt + ",Time Stamp=" + tstamp + ",Seat=" + seat
-				+ "]";
+				+ ",Discounted=" + discounted + "]";
 	}
 
 	public int getId() {
@@ -83,6 +85,14 @@ public class Reserve implements Entity {
 
 	public void setSeat(int seat) {
 		this.seat = seat;
+	}
+
+	public boolean getDiscounted() {
+		return discounted;
+	}
+
+	public void setDiscounted(boolean discounted) {
+		this.discounted = discounted;
 	}
 
 }

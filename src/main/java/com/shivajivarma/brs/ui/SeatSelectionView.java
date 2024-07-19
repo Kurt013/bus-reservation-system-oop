@@ -30,6 +30,9 @@ public class SeatSelectionView extends BaseView implements View {
             availableSeat = ViewComponentFactory.createImageIcon(ResourcePaths.GREENSEAT),
             pwdSeat = ViewComponentFactory.createImageIcon(ResourcePaths.PWDSEAT); // Add pwdSeat icon
     private JButton bookButton, backButton;
+    private JCheckBox discountCheckbox;
+    public boolean applyDiscount;
+
 
     public SeatSelectionView() {
         super(); // Call superclass constructor
@@ -69,6 +72,15 @@ public class SeatSelectionView extends BaseView implements View {
 
         addHoverEffect(bookButton, jaclinery, Color.white, Color.white, jaclinery);
         addHoverEffect(backButton, jaclinery, Color.white, Color.white, jaclinery);
+
+        // Initialize discount checkbox
+        discountCheckbox = new JCheckBox("Discount");
+        discountCheckbox.setBounds(700, 20, 100, 20); // Adjust position as needed
+        this.add(discountCheckbox);
+
+        discountCheckbox.addActionListener(e -> {
+            updateSeatIcons(); // Method to update seat icons based on checkbox state
+        });
 
         int totalSeats = 49;
         int seatsPerRow = 4;
@@ -160,5 +172,21 @@ public class SeatSelectionView extends BaseView implements View {
 
     public List<JCheckBox> getSeats() {
         return seats;
+    }
+
+     private void updateSeatIcons() {
+        boolean applyDiscount = discountCheckbox.isSelected();
+        this.applyDiscount = applyDiscount;
+        
+        for (int i = 0; i < 8; i++) {
+            JLabel icon = icons.get(i);
+            ImageIcon currentIcon = (ImageIcon) icon.getIcon();
+
+            if (applyDiscount && currentIcon == availableSeat) {
+                icon.setIcon(pwdSeat);
+            } else if (!applyDiscount && currentIcon == pwdSeat) {
+                icon.setIcon(availableSeat);
+            }
+        }
     }
 }

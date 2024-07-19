@@ -39,6 +39,7 @@ CREATE TABLE  `brs`.`reserve` (
 	`dt` DATE NOT NULL, 
 	`tstamp` DATE NOT NULL, 
 	`seat` int NOT NULL, 
+    `discounted` boolean NOT NULL,
 	 PRIMARY KEY (`id`), 
 	 FOREIGN KEY (`passengerid`) REFERENCES  `brs`.`passenger` (`id`), 
 	 FOREIGN KEY (`busid`) REFERENCES  `brs`.`bus` (`id`))
@@ -58,7 +59,8 @@ CREATE VIEW `brs`.`reservation` AS
         `route`.`destination` AS `destination`,
         `bus`.`departuretime` AS `departuretime`,
         `bus`.`ARRIVALTIME` AS `arrivaltime`,
-        `bus`.`fare` AS `fare`  -- Include fare column from bus table
+        `bus`.`fare` AS `fare`,  -- Include fare column from bus table
+        `reserve`.`discounted` AS `discounted`
     FROM
         ((`brs`.`reserve`
         JOIN `brs`.`bus`)

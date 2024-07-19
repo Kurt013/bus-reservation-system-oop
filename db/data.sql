@@ -5,6 +5,8 @@ delete from `brs`.`reserve`;
 delete from `brs`.`bus`;
 ALTER TABLE `brs`.`bus` AUTO_INCREMENT = 200;
 
+INSERT INTO `brs`.`passenger` (`username`, `password`) VALUES ('admin','admin');
+
 delete from `brs`.`route`;
 ALTER TABLE `brs`.`route` AUTO_INCREMENT = 10;
 

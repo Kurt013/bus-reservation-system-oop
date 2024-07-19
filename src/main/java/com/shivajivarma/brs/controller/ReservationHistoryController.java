@@ -67,7 +67,8 @@ public class ReservationHistoryController implements Controller {
 								reservationBean.getDestination(),
 								reservationBean.getDeparturetime(),
 								reservationBean.getArrivaltime(),
-								String.valueOf(reservationBean.getSeat()));
+								String.valueOf(reservationBean.getSeat()
+								));
 			}
 
 		} catch (EmptyResultDataAccessException e) {

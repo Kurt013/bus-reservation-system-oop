@@ -101,6 +101,12 @@ public class SeatSelectionController implements Controller{
 			reserve.setDt(date);
 			reserve.setTstamp(DateUtil.getTimeStamp());
 			reserve.setSeat(seatNumber);
+			if (seatSelectionView.applyDiscount) {
+				reserve.setDiscounted(true);				
+			}
+			else {
+				reserve.setDiscounted(false);
+			}
 			int ticketNum = reserveService.reserve(reserve);
 			
 			reserve.setId(ticketNum);
@@ -110,8 +116,8 @@ public class SeatSelectionController implements Controller{
 			reservationBean.setDestination(route.getDestination());
 			reservationBean.setArrivaltime(bus.getArrivalTime());
 			reservationBean.setDeparturetime(bus.getDepartureTime());
-			
-			// Set fare in ReservationBean
+			reservationBean.setDiscounted(reserve.getDiscounted());
+			// Set fare in ReservationBean			
 			reservationBean.setFare(bus.getFare());
 
 			tickets.add(reservationBean);

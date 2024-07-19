@@ -27,8 +27,8 @@ public class MasterController implements Controller{
       
     public void control(Controller parentController){
     	this.bannerView = new BannerViewPanel();
-    	this.loginControl();
-    	//this.autoLoginControl();
+    	// this.loginControl();
+    	this.autoLoginControl();
     }
     
     public void loginControl(){
@@ -44,8 +44,8 @@ public class MasterController implements Controller{
     
     public void autoLoginControl(){
         	Passenger passenger = new Passenger();
-        	passenger.setUsername("test");
-        	passenger.setPassword("test");
+        	passenger.setUsername("admin");
+        	passenger.setPassword("admin");
         	passengerService = new PassengerService();
         	((PassengerService)passengerService).setModel(passenger);
         	((PassengerService)passengerService).login();

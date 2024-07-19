@@ -20,7 +20,7 @@ public class ReserveDAOImpl extends BaseDAO implements ReserveDAO {
 	@Override
 	public int save(Reserve reserve){
 		
-		String query = "INSERT INTO "+table+" (passengerid,busid,dt,tstamp,seat) VALUES(?,?,STR_TO_DATE(?,'%d-%M-%Y'),STR_TO_DATE(?,'%d/%M/%Y'),?)";
+		String query = "INSERT INTO "+table+" (passengerid,busid,dt,tstamp,seat,discounted) VALUES(?,?,STR_TO_DATE(?,'%d-%M-%Y'),STR_TO_DATE(?,'%d/%M/%Y'),?,?)";
 		
 		getJdbcTemplate().update(query, 
 				new Object[] { 
@@ -28,7 +28,8 @@ public class ReserveDAOImpl extends BaseDAO implements ReserveDAO {
 				reserve.getBusID(),
 				reserve.getDt(),
 				reserve.getTstamp(),
-				reserve.getSeat()});
+				reserve.getSeat(),
+				reserve.getDiscounted()});
 		
 		query = "select max(id) from "+table;
 		
