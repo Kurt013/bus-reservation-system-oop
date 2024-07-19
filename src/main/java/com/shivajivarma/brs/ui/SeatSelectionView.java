@@ -22,7 +22,8 @@ import com.shivajivarma.brs.utility.constants.ResourcePaths;
 
 public class SeatSelectionView extends BaseView implements View {
 
-    private List<JCheckBox> seats = new ArrayList<JCheckBox>();
+    private List<JCheckBox> seats = new ArrayList<>();
+    public List<Boolean> seatTypes = new ArrayList<>();
     private List<JLabel> icons = new ArrayList<JLabel>();
     private BufferedImage backgroundImage;
 
@@ -31,7 +32,7 @@ public class SeatSelectionView extends BaseView implements View {
             pwdSeat = ViewComponentFactory.createImageIcon(ResourcePaths.PWDSEAT); // Add pwdSeat icon
     private JButton bookButton, backButton;
     private JCheckBox discountCheckbox;
-    public boolean applyDiscount;
+    public boolean isPWDseat = false, discountToggled = false;
 
 
     public SeatSelectionView() {
@@ -79,6 +80,8 @@ public class SeatSelectionView extends BaseView implements View {
         this.add(discountCheckbox);
 
         discountCheckbox.addActionListener(e -> {
+            discountToggled = discountCheckbox.isSelected();
+            isPWDseat = discountCheckbox.isSelected();
             updateSeatIcons(); // Method to update seat icons based on checkbox state
         });
 
@@ -146,6 +149,8 @@ public class SeatSelectionView extends BaseView implements View {
         seat.setActionCommand(Integer.toString(seatIndex));
         seats.add(seat);
 
+        seatTypes.add(false);
+
         icon.setBounds(xOffset + 22, 70 + (row * 50), 65, 65);
         icons.add(icon);
 
@@ -170,17 +175,22 @@ public class SeatSelectionView extends BaseView implements View {
     }
 
      private void updateSeatIcons() {
-        boolean applyDiscount = discountCheckbox.isSelected();
-        this.applyDiscount = applyDiscount;
         
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < seats.size(); i++) {
             JLabel icon = icons.get(i);
             ImageIcon currentIcon = (ImageIcon) icon.getIcon();
+            
+            if (seats.get(i).isSelected() && discountToggled) {
+                seatTypes.add(i, true);
+            }
 
-            if (applyDiscount && currentIcon == availableSeat) {
-                icon.setIcon(pwdSeat);
-            } else if (!applyDiscount && currentIcon == pwdSeat) {
-                icon.setIcon(availableSeat);
+            /* Shows the PWD seats */
+            if (!seats.get(i).isSelected() && i < 8) {
+                if (isPWDseat && currentIcon == availableSeat) {
+                    icon.setIcon(pwdSeat);
+                } else if (!isPWDseat && currentIcon == pwdSeat) {
+                    icon.setIcon(availableSeat);
+                }
             }
         }
     }

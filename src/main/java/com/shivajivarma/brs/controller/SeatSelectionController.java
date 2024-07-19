@@ -57,22 +57,23 @@ public class SeatSelectionController implements Controller{
 		});
     	
     	seatSelectionView.getBookButton().addActionListener(new ActionAdapter() {
-			public void actionPerformed(ActionEvent ae) {
-				for (JCheckBox seat : seatSelectionView.getSeats()) {
-					if(seat.isSelected()){
-						_this.reserve(Integer.parseInt(seat.getActionCommand()));
+				public void actionPerformed(ActionEvent ae) {
+					for (int i = 0; i < seatSelectionView.getSeats().size(); i++) {
+						if (seatSelectionView.getSeats().get(i).isSelected()) {
+							JCheckBox seat = seatSelectionView.getSeats().get(i);
+							_this.reserve(Integer.parseInt(seat.getActionCommand()), seatSelectionView.seatTypes.get(i));
+						}
+					}
+					if(!tickets.isEmpty()){
+						reserveService.printTickets(tickets);
+						masterController.applicationControl();
+					}else{
+						Alert.errorMessage(Messages.NO_SEAT_SELECTED);
 					}
 				}
-				if(!tickets.isEmpty()){
-					reserveService.printTickets(tickets);
-					masterController.applicationControl();
-				}else{
-					Alert.errorMessage(Messages.NO_SEAT_SELECTED);
-				}
+			});
+				
 			}
-		});
-    	
-    }
     
     private void populateSeats() {
     	if (reserveService == null) {
@@ -90,7 +91,7 @@ public class SeatSelectionController implements Controller{
 		}		
 	}
     
-    private void reserve(int seatNumber) {
+    private void reserve(int seatNumber, boolean isDiscounted) {
     	if (reserveService == null) {
     		reserveService = new ReserveService();
     	}
@@ -101,7 +102,7 @@ public class SeatSelectionController implements Controller{
 			reserve.setDt(date);
 			reserve.setTstamp(DateUtil.getTimeStamp());
 			reserve.setSeat(seatNumber);
-			reserve.setDiscounted(seatSelectionView.applyDiscount);				
+			reserve.setDiscounted(isDiscounted);				
 			int ticketNum = reserveService.reserve(reserve);
 			
 			reserve.setId(ticketNum);
