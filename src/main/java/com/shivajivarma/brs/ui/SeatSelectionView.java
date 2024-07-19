@@ -94,6 +94,7 @@ public class SeatSelectionView extends BaseView implements View {
             int seatsInRow = (row == rows - 1) ? lastRowSeats : seatsPerRow;
             for (int col = 0; col < seatsInRow; col++) {
                 addSeat(row, col, seatsInRow);
+                seatTypes.add(false);
             }
         }
 
@@ -149,7 +150,6 @@ public class SeatSelectionView extends BaseView implements View {
         seat.setActionCommand(Integer.toString(seatIndex));
         seats.add(seat);
 
-        seatTypes.add(false);
 
         icon.setBounds(xOffset + 22, 70 + (row * 50), 65, 65);
         icons.add(icon);
@@ -182,9 +182,6 @@ public class SeatSelectionView extends BaseView implements View {
             
             if (seats.get(i).isSelected() && discountToggled) {
                 seatTypes.set(i, true);
-            }
-            else {
-                seatTypes.set(i, false);
             }
 
             /* Shows the PWD seats */
