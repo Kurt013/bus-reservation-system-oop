@@ -32,7 +32,7 @@ public class SeatSelectionView extends BaseView implements View {
             pwdSeat = ViewComponentFactory.createImageIcon(ResourcePaths.PWDSEAT); // Add pwdSeat icon
     private JButton bookButton, backButton;
     private JCheckBox discountCheckbox;
-    public boolean isPWDseat = false, discountToggled = false;
+    public boolean discountToggled = false;
 
 
     public SeatSelectionView() {
@@ -86,6 +86,10 @@ public class SeatSelectionView extends BaseView implements View {
         discountCheckbox.setBackground(new Color(220, 2 , 11));
         discountCheckbox.setForeground(Color.white);
         this.add(discountCheckbox);
+
+        discountCheckbox.addActionListener(e -> {
+            discountToggled = discountCheckbox.isSelected();
+        });
 
         int totalSeats = 49;
         int seatsPerRow = 4;
