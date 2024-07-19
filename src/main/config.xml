@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\xampp\htdocs\bus-reservation-system-oop\bus-reservation-system-oop.jar</jar>
-  <outfile>C:\xampp\htdocs\bus-reservation-system-oop\Bus Reservation System.exe</outfile>
+  <outfile>C:\xampp\htdocs\bus-reservation-system-oop\Jacliner Bus Reservation.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>

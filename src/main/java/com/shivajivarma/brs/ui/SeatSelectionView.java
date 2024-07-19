@@ -87,12 +87,6 @@ public class SeatSelectionView extends BaseView implements View {
         discountCheckbox.setForeground(Color.white);
         this.add(discountCheckbox);
 
-        discountCheckbox.addActionListener(e -> {
-            discountToggled = discountCheckbox.isSelected();
-            isPWDseat = discountCheckbox.isSelected();
-            updateSeatIcons(); // Method to update seat icons based on checkbox state
-        });
-
         int totalSeats = 49;
         int seatsPerRow = 4;
         int lastRowSeats = 5;
@@ -106,11 +100,19 @@ public class SeatSelectionView extends BaseView implements View {
             }
         }
 
+        /* Show PWD Seats */
+        for (int i = 0; i < 8; i++) {
+            JLabel icon = icons.get(i);
+            icon.setIcon(pwdSeat);
+        }
+
+        /* Determine discounted and regular reservations */
         for (JCheckBox seat : seats) {
             seat.addActionListener(e -> {
                 seatTypes.set(seats.indexOf(seat), seat.isSelected() && discountToggled);
             });
         }
+
 
 
         this.add(bookButton);
@@ -192,21 +194,4 @@ public class SeatSelectionView extends BaseView implements View {
     public List<Boolean> getDisc() {
         return seatTypes;
     }
-
-     private void updateSeatIcons() {
-        for (int i = 0; i < seats.size(); i++) {
-            JLabel icon = icons.get(i);
-            ImageIcon currentIcon = (ImageIcon) icon.getIcon();
-
-            /* Shows the PWD seats */
-            if (!seats.get(i).isSelected() && i < 8) {
-                if (isPWDseat && currentIcon == availableSeat) {
-                    icon.setIcon(pwdSeat);
-                } else if (!isPWDseat && currentIcon == pwdSeat) {
-                    icon.setIcon(availableSeat);
-                }
-            }
-        }
-    }
-
 }
