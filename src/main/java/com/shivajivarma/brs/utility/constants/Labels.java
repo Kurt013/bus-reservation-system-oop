@@ -22,5 +22,6 @@ public class Labels {
 	public static final String REMINDER = "<html><i><b>Reminder: Fees will apply if a passenger cancels their ticket one day <br> before the departure date. </b></i></html>";
 	public static final String REMINDER2 = "<html><i><b>Please double-check and confirm the destination and departure <br> date selected with the passenger before clicking 'submit'.</b></i></html>";
 	public static final String REMINDER3 = "<html><i><b>To display passenger's ticket details, select the row with the ticket ID you wish to view, then click 'View Ticket'.</b></i></html>";
-
-}
+    public static final String REMINDER5 = "<html><i><b>For students, persons with disabilities, <br> and senior citizen passengers, only check <br> 'discounted' once they present an ID to <br> receive the discount.</b></i></html>";
+	public static final String REMINDER6 = "<html><i><b>Priority seats are allotted to persons <br> with disabilities, senior citizens, and <br> pregnant women.</b></i></html>";
+}    

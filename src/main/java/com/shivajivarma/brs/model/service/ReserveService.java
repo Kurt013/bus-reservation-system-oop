@@ -254,13 +254,13 @@ public class ReserveService implements Service{
 		"<body>\n" +
 		"<main class=\"ticket-system\">\n" +
 		"   <div class=\"top\">\n" +
-		"   <h1 class=\"title\"><i>Wait a second, your ticket is being printed...</i></h1>\n" +
+		"   <h1 class=\"title\"><i>Wait a second, the bus ticket is being printed...</i></h1>\n" +
 		"   <div class=\"printer\">\n" +
 		"   </div>\n" +
 		"   <div class=\"receipts-wrapper\">\n" +
 		"      <div class=\"receipts\">\n" +
 		"         <div class=\"receipt\">\n" +
-		"            <img class=\"airliner-logo\" src=\"https://jacliner.com/images/logo-jacliner.jpg\" alt=\"Airliner Logo\">\n" +
+		"            <img class=\"airliner-logo\" src=\"C:/xampp/htdocs/bus-reservation-system-oop/src/main/resources/images/logojacliner.jpg\" alt=\"Airliner Logo\">\n" +
 		"            <div class=\"details\">\n" +
 		"               <div class=\"item one\">\n" +
 		"                  <span>Date</span>\n" +
@@ -307,6 +307,7 @@ public class ReserveService implements Service{
 		"         <div class=\"receipt qr-code\">\n" +
 		"            <div class=\"description\">\n" +
 		"               <h2><b>Successfully Reserved!<b></h2>\n" +
+		"               <p><i>Present it to the bus conductor on the date of your departure.</i></p>\n" +
 		"            </div>\n" +
 		"         </div>\n" +
 		"      </div>\n" +

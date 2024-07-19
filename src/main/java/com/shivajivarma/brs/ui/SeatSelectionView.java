@@ -26,7 +26,7 @@ public class SeatSelectionView extends BaseView implements View {
     private List<Boolean> seatTypes = new ArrayList<>();
     private List<JLabel> icons = new ArrayList<JLabel>();
     private BufferedImage backgroundImage;
-
+    private int x = 0, y = 40;
     private static ImageIcon disabledSeat = ViewComponentFactory.createImageIcon(ResourcePaths.REDSEAT),
             availableSeat = ViewComponentFactory.createImageIcon(ResourcePaths.GREENSEAT),
             pwdSeat = ViewComponentFactory.createImageIcon(ResourcePaths.PWDSEAT); // Add pwdSeat icon
@@ -46,6 +46,7 @@ public class SeatSelectionView extends BaseView implements View {
         }
 
         this.initializeComponents();
+        this.initializeLabels();
     }
 
     @Override
@@ -57,10 +58,14 @@ public class SeatSelectionView extends BaseView implements View {
             g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         }
     }
-
+    
+    private void initializeLabels() {
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER5, new int[]{x + 42, y + 335, 240, 30}, new Color (182, 4, 11)));
+        this.add(ViewComponentFactory.createJLabelNormal(Labels.REMINDER6, new int[]{x + 42, y + 437, 240, 30}, new Color (182, 4, 11)));
+    }
     private void initializeComponents() {
         Color jaclinery = new Color(248, 188, 8);
-        bookButton = new RoundButton(Labels.BOOK, new int[]{43, 248, 100, 30}, Color.white, jaclinery);
+        bookButton = new RoundButton(Labels.BOOK, new int[]{43, 258, 100, 30}, Color.white, jaclinery);
         backButton = new RoundButton(Labels.BACK, new int[]{43, 298, 100, 30}, Color.white, jaclinery);
 
         bookButton.setFocusPainted(false);
@@ -75,8 +80,11 @@ public class SeatSelectionView extends BaseView implements View {
         addHoverEffect(backButton, jaclinery, Color.white, Color.white, jaclinery);
 
         // Initialize discount checkbox
-        discountCheckbox = new JCheckBox("Discount");
-        discountCheckbox.setBounds(700, 20, 100, 20); // Adjust position as needed
+        discountCheckbox = new JCheckBox("Discounted");
+        discountCheckbox.setFont(ViewComponentFactory.FONT_BUTTON);
+        discountCheckbox.setBounds(12, 220, 130, 20); // Adjust position as needed
+        discountCheckbox.setBackground(new Color(220, 2 , 11));
+        discountCheckbox.setForeground(Color.white);
         this.add(discountCheckbox);
 
         discountCheckbox.addActionListener(e -> {
