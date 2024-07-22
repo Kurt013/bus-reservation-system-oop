@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 
-import com.shivajivarma.brs.model.entity.Passenger;
-import com.shivajivarma.brs.model.service.PassengerService;
+import com.shivajivarma.brs.model.entity.TicketMaster;
+import com.shivajivarma.brs.model.service.TicketMasterService;
 import com.shivajivarma.brs.ui.Alert;
 import com.shivajivarma.brs.ui.LoginPanelView;
 import com.shivajivarma.brs.ui.View;
@@ -14,14 +14,14 @@ import com.shivajivarma.brs.utility.constants.Messages;
 public class LoginController implements Controller{
 	
 	private LoginController _this;
-	private PassengerService passengerService;
+	private TicketMasterService ticketMasterService;
 	private LoginPanelView loginView;
-	private Passenger passenger;
+	private TicketMaster ticketMaster;
 	
     public LoginController(View loginView) {
     	_this = this;
     	this.loginView = (LoginPanelView) loginView;
-    	this.passenger = new Passenger();
+    	this.ticketMaster = new TicketMaster();
     }
     
     public void control(Controller parentController){
@@ -32,11 +32,11 @@ public class LoginController implements Controller{
     	loginView.getLoginButton().addActionListener(new ActionAdapter() {
 			public void actionPerformed(ActionEvent ae) {
 				if(loginView.validateFields()){
-					passenger.setUsername(loginView.getUsername());
-					passenger.setPassword(loginView.getPassword());
+					ticketMaster.setUsername(loginView.getUsername());
+					ticketMaster.setPassword(loginView.getPassword());
 					try{
 						if(_this.login()){
-							masterController.setPassengerService(passengerService);
+							masterController.setTicketMasterService(ticketMasterService);
 							masterController.applicationControl();
 						}else{
 							loginView.refresh();
@@ -54,11 +54,11 @@ public class LoginController implements Controller{
     }
     
     private boolean login()throws EmptyResultDataAccessException{
-    	if(passengerService == null){
-    		passengerService = new PassengerService();
+    	if(ticketMasterService == null){
+    		ticketMasterService = new TicketMasterService();
     	}
-    	passengerService.setModel(passenger);
-    	return passengerService.login();
+    	ticketMasterService.setModel(ticketMaster);
+    	return ticketMasterService.login();
     }    
     
 }

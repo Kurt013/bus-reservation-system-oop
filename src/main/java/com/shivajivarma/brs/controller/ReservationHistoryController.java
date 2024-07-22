@@ -16,7 +16,6 @@ public class ReservationHistoryController implements Controller {
 
 	private ReservationHistoryTabView historyTab;
 	private ReserveService reserveService;
-	private int pid;
 	private List<ReservationBean> reservationsList;
 
 	public ReservationHistoryController(View historyTab) {
@@ -25,7 +24,6 @@ public class ReservationHistoryController implements Controller {
 
 	public void control(Controller parentController) {
 
-		pid = ((HomeTabsMediator)parentController).getPassengerService().getModel().getId();
 		/*
 		 * Populate table
 		 */
@@ -56,7 +54,7 @@ public class ReservationHistoryController implements Controller {
 		historyTab.clearTable();
 		try {
 			reservationsList = reserveService
-					.getReservationHistory(pid);
+					.getReservationHistory();
 
 			for (ReservationBean reservationBean : reservationsList) {
 				historyTab

@@ -2,8 +2,8 @@ package com.shivajivarma.brs.controller;
 
 import com.shivajivarma.brs.model.Model;
 import com.shivajivarma.brs.model.entity.Bus;
-import com.shivajivarma.brs.model.entity.Passenger;
-import com.shivajivarma.brs.model.service.PassengerService;
+import com.shivajivarma.brs.model.entity.TicketMaster;
+import com.shivajivarma.brs.model.service.TicketMasterService;
 import com.shivajivarma.brs.model.service.Service;
 import com.shivajivarma.brs.ui.BannerViewPanel;
 import com.shivajivarma.brs.ui.BusSelectionView;
@@ -18,7 +18,7 @@ public class MasterController implements Controller{
 	
 	private MasterView masterView;
 	private View bannerView;
-	private Service passengerService;
+	private Service ticketMasterService;
     
 	public MasterController(MasterView masterView) {
     	this.masterView = masterView;
@@ -43,13 +43,13 @@ public class MasterController implements Controller{
     }
     
     public void autoLoginControl(){
-        	Passenger passenger = new Passenger();
-        	passenger.setUsername("admin");
-        	passenger.setPassword("admin");
-        	passengerService = new PassengerService();
-        	((PassengerService)passengerService).setModel(passenger);
-        	((PassengerService)passengerService).login();
-        	this.setPassengerService(passengerService);
+        	TicketMaster ticketMaster = new TicketMaster();
+        	ticketMaster.setUsername("admin");
+        	ticketMaster.setPassword("admin");
+        	ticketMasterService = new TicketMasterService();
+        	((TicketMasterService)ticketMasterService).setModel(ticketMaster);
+        	((TicketMasterService)ticketMasterService).login();
+        	this.setTicketMasterService(ticketMasterService);
     		this.applicationControl();
     }
     
@@ -85,12 +85,12 @@ public class MasterController implements Controller{
     	seatSelectionController.control(this);   	
     }
     
-    public Service getPassengerService() {
-		return passengerService;
+    public Service getTicketMasterService() {
+		return ticketMasterService;
 	}
 
-	public void setPassengerService(Service passengerService) {
-		this.passengerService = passengerService;
+	public void setTicketMasterService(Service ticketMasterService) {
+		this.ticketMasterService = ticketMasterService;
 	}
     
 }

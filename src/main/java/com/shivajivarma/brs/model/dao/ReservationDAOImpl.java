@@ -11,20 +11,17 @@ import com.shivajivarma.brs.model.bean.ReservationBean;
  * CRUD operations for reservation view.
  */
 public class ReservationDAOImpl extends BaseDAO implements ReservationDAO {
-		
-	
-	public ReservationDAOImpl(){
+
+	public ReservationDAOImpl() {
 		this.table = ReservationBean.indentity;
 	}
-	
-	public List<ReservationBean> findByPid(int passengerID) throws EmptyResultDataAccessException{
-		
-		String query = "select * from "+table+" where passengerid = ?";
-		
-		List<ReservationBean> reservationBeans = 
-				getJdbcTemplate().query(query, 
-		        		new Object[] { passengerID }, 
-						new BeanPropertyRowMapper<ReservationBean>(ReservationBean.class));
+
+	public List<ReservationBean> findAllReservations() throws EmptyResultDataAccessException {
+
+		String query = "select * from " + table;
+
+		List<ReservationBean> reservationBeans = getJdbcTemplate().query(query,
+				new BeanPropertyRowMapper<ReservationBean>(ReservationBean.class));
 		return reservationBeans;
 	}
 }

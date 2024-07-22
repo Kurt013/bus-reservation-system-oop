@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.event.ChangeEvent;
 
-import com.shivajivarma.brs.model.service.PassengerService;
+import com.shivajivarma.brs.model.service.TicketMasterService;
 import com.shivajivarma.brs.ui.CancellationTabView;
 import com.shivajivarma.brs.ui.HomeTabsPanelView;
 import com.shivajivarma.brs.ui.ReservationHistoryTabView;
@@ -20,7 +20,7 @@ public class HomeTabsMediator implements Controller{
 	private CancellationController cancellationController;
 	private ReservationHistoryController historyTabController;
 	private ReservationController reservationController;
-	private PassengerService passengerService;
+	private TicketMasterService ticketMasterService;
 	
     public HomeTabsMediator(View homeTabs) {
     	_this = this;
@@ -29,7 +29,7 @@ public class HomeTabsMediator implements Controller{
     
     public void control(Controller parentController){
     	masterController = (MasterController) parentController;
-    	passengerService = (PassengerService) masterController.getPassengerService();
+    	ticketMasterService = (TicketMasterService) masterController.getTicketMasterService();
     	
     	View reservationTab = new ReservationTabView();
     	View cancelTab = new CancellationTabView();
@@ -77,8 +77,8 @@ public class HomeTabsMediator implements Controller{
 		return masterController;
 	}
 
-	public PassengerService getPassengerService() {
-		return passengerService;
+	public TicketMasterService getTicketMasterService() {
+		return ticketMasterService;
 	}
     
     public void updateTabs(){

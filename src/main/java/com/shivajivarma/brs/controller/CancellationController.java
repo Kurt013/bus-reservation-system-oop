@@ -27,7 +27,7 @@ public class CancellationController implements Controller{
     
     public void control(Controller parentController){
     	
-    	reserve.setPassengerID(((HomeTabsMediator)parentController).getPassengerService().getModel().getId());
+    	// reserve.setPassengerID(((HomeTabsMediator)parentController).getTicketMasterService().getModel().getId());
     	
     	cancellationTab.getSubmitButton().addActionListener(new ActionAdapter() {
 			

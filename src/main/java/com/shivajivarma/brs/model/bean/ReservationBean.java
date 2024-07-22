@@ -16,9 +16,8 @@ public class ReservationBean extends Reserve implements Bean {
 	public ReservationBean(){
 	}
 	
-	public ReservationBean(int id, int passengerID, int busID, String dt, String tstamp, int seat, String origin, String destination, String departuretime, String arrivaltime, boolean discounted) {
+	public ReservationBean(int id, int busID, String dt, String tstamp, int seat, String origin, String destination, String departuretime, String arrivaltime, boolean discounted) {
 		this.setId(id);
-		this.setPassengerID(passengerID);
 		this.setBusID(busID);
 		this.setDt(dt);
 		this.setTstamp(tstamp);
@@ -32,7 +31,6 @@ public class ReservationBean extends Reserve implements Bean {
 	
 	public ReservationBean(Reserve reserve){
 		this.setId(reserve.getId());
-		this.setPassengerID(reserve.getPassengerID());
 		this.setBusID(reserve.getBusID());
 		this.setDt(reserve.getDt());
 		this.setTstamp(reserve.getTstamp());

@@ -8,7 +8,7 @@ import com.shivajivarma.brs.model.bean.ReservationBean;
 
 //CRUD operations
 public interface ReservationDAO {
-   
-	public List<ReservationBean> findByPid(int pid) throws EmptyResultDataAccessException;
-  
+
+	public List<ReservationBean> findAllReservations() throws EmptyResultDataAccessException;
+
 }

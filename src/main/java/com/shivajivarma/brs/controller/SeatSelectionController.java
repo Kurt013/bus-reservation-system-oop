@@ -13,7 +13,6 @@ import com.shivajivarma.brs.model.bean.ReservationBean;
 import com.shivajivarma.brs.model.entity.Bus;
 import com.shivajivarma.brs.model.entity.Reserve;
 import com.shivajivarma.brs.model.entity.Route;
-import com.shivajivarma.brs.model.service.PassengerService;
 import com.shivajivarma.brs.model.service.ReserveService;
 import com.shivajivarma.brs.ui.Alert;
 import com.shivajivarma.brs.ui.SeatSelectionView;
@@ -30,7 +29,6 @@ public class SeatSelectionController implements Controller{
 	private Route route;
 	private String date;
 	private Bus bus;
-	private int pid;
 	private ReserveService reserveService;
 	private List<ReservationBean> tickets = new ArrayList<ReservationBean>();
 	
@@ -46,7 +44,6 @@ public class SeatSelectionController implements Controller{
     public void control(Controller parentController){
     	MasterController masterController = (MasterController) parentController;
     	
-    	pid = ((PassengerService) masterController.getPassengerService()).getModel().getId();
     	
     	this.populateSeats();
     	
@@ -100,7 +97,6 @@ public class SeatSelectionController implements Controller{
     	}
 		try{
 			Reserve reserve = new Reserve();
-			reserve.setPassengerID(pid);
 			reserve.setBusID(bus.getId());
 			reserve.setDt(date);
 			reserve.setTstamp(DateUtil.getTimeStamp());
