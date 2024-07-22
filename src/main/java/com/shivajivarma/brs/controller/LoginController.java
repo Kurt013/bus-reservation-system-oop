@@ -24,34 +24,32 @@ public class LoginController implements Controller{
     	this.ticketMaster = new TicketMaster();
     }
     
-    // public void control(Controller parentController){
-    // 	MasterController masterController = (MasterController) parentController;
-    // 	/**
-		//  *  On click of register button, switch control to RegistrationController
-		//  */
-    // 	loginView.getLoginButton().addActionListener(new ActionAdapter() {
-		// 	public void actionPerformed(ActionEvent ae) {
-		// 		if(loginView.validateFields()){
-		// 			ticketMaster.setUsername(loginView.getUsername());
-		// 			ticketMaster.setPassword(loginView.getPassword());
-		// 			try{
-		// 				if(_this.login()){
-		// 					masterController.setTicketMasterService(ticketMasterService);
-		// 					masterController.applicationControl();
-		// 				}else{
-		// 					loginView.refresh();
-		// 					Alert.errorMessage(Messages.ERROR_WRONG_PASSWORD);
-		// 				}
-		// 			}catch(EmptyResultDataAccessException e){
-		// 				loginView.refresh();
-		// 				Alert.errorMessage(Messages.ERROR_NO_USERNAME);
-		// 			}
-		// 		}
-		// 	}
-		// });
+    public void control(Controller parentController){
+    	MasterController masterController = (MasterController) parentController;
+
+    	loginView.getLoginButton().addActionListener(new ActionAdapter() {
+			public void actionPerformed(ActionEvent ae) {
+				if(loginView.validateFields()){
+					ticketMaster.setUsername(loginView.getUsername());
+					ticketMaster.setPassword(loginView.getPassword());
+					try{
+						if(_this.login()){
+							masterController.setTicketMasterService(ticketMasterService);
+							masterController.applicationControl();
+						}else{
+							loginView.refresh();
+							Alert.errorMessage(Messages.ERROR_WRONG_PASSWORD);
+						}
+					}catch(EmptyResultDataAccessException e){
+						loginView.refresh();
+						Alert.errorMessage(Messages.ERROR_NO_USERNAME);
+					}
+				}
+			}
+		});
     	
     	
-    // }
+    }
     
     private boolean login()throws EmptyResultDataAccessException{
     	if(ticketMasterService == null){
