@@ -44,8 +44,8 @@ public class MasterController implements Controller{
     
     public void autoLoginControl(){
         	TicketMaster ticketMaster = new TicketMaster();
-        	ticketMaster.setUsername("admin");
-        	ticketMaster.setPassword("admin");
+        	ticketMaster.setUsername("ticket_master");
+        	ticketMaster.setPassword("jacliner12345678");
         	ticketMasterService = new TicketMasterService();
         	((TicketMasterService)ticketMasterService).setModel(ticketMaster);
         	((TicketMasterService)ticketMasterService).login();
