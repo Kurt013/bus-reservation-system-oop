@@ -22,7 +22,7 @@ public class TicketMaster implements Entity{
 	
 	@Override
 	public String toString() {
-		return "Passenger::[ID=" + id + ",Username=" + username
+		return "TicketMaster::[ID=" + id + ",Username=" + username
 				+ ",Password=" + password + "]";
 	}
 
