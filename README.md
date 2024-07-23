@@ -9,18 +9,14 @@ Jacliner Bus Reservation System Application, written in java.
 ### Setup:
 
 1. Install Prerequisite Software:
-	* Java 1.8 or above
+	* Java JDK 1.8 or above
 	* XAMPP (Apache & MySQL)
 	* VS Code
 
-2. Set Enviroment Variables (Paths may vary based on OS and installation): 
-	* ```CLASSPATH=C:\Program Files\Java\jdk1.8.0_20\bin```
-	* ```PATH=C:\Program Files\Java\jdk1.8.0_20\bin```
-	* ```JAVA_HOME=C:\Program Files\Java\jdk1.8.0_20```
-
-3. Clone the source code:
+2. Clone the source code:
  	```bash
  	git clone https://github.com/Kurt013/bus-reservation-system-oop.git
  	```
+	or use Github Desktop
 
-4. Database setup (https://github.com/Kurt013/bus-reservation-system-oop/tree/main/db)
+3. Database setup (https://github.com/Kurt013/bus-reservation-system-oop/tree/main/db)
