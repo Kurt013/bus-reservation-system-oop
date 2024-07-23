@@ -1,23 +1,17 @@
 Bus Reservation System
 ======================
-[![Build Status](https://github.com/shivajivarma/bus-reservation-system/workflows/Build/badge.svg)](https://github.com/shivajivarma/bus-reservation-system/actions?workflow=Build)
-
-Bus reservation system application, written in java.
+Jacliner Bus Reservation System Application, written in java.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/shivajivarma/bus-reservation-system/master/src/main/resources/images/banner.jpg">
+  <img src="src/main/resources/images/banner.png">
 </div>
-
-Project Documentation: https://shivajivarma.com/project/bus-reservation-system/
-
 
 ### Setup:
 
 1. Install Prerequisite Software:
-	* Java 1.8
-	* MySql 5.6 + MySql Connector/J + workbench (http://dev.mysql.com/downloads/windows/installer/)
-	* Eclipse Luna
-	* Install Maven plugin in Eclipse (http://download.eclipse.org/technology/m2e/releases/)
+	* Java 1.8 or above
+	* XAMPP (Apache & MySQL)
+	* VS Code
 
 2. Set Enviroment Variables (Paths may vary based on OS and installation): 
 	* ```CLASSPATH=C:\Program Files\Java\jdk1.8.0_20\bin```
@@ -26,13 +20,7 @@ Project Documentation: https://shivajivarma.com/project/bus-reservation-system/
 
 3. Clone the source code:
  	```bash
- 	git clone https://github.com/shivajivarma/bus-reservation-system.git
+ 	git clone https://github.com/Kurt013/bus-reservation-system-oop.git
  	```
- 	
-4. Import project into eclipse.
 
-5. Make sure eclispe is using currect JDK.
-
-6. Database setup (https://github.com/shivajivarma/bus-reservation-system/tree/master/db)
-
-7. Set Maven goals Eg: compile, package
+4. Database setup (https://github.com/Kurt013/bus-reservation-system-oop/tree/main/db)
